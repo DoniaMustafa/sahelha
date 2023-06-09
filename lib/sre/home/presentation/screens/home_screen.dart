@@ -16,6 +16,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: Container(
         padding:const EdgeInsets.only(right: 20, left: 20, top: 50, bottom: 20),
@@ -57,7 +58,7 @@ class HomeScreen extends StatelessWidget {
 
   Widget _buildUserInfoAndIcons() => Row(
         children: [
-          CustomPngImage(
+          CustomPngImage(isBorderColor: true,
               image: AssetsManager.user, height: 48, width: 48, isBorder: true),
           SizedBox(
             width: 5
@@ -189,6 +190,8 @@ class HomeScreen extends StatelessWidget {
                   child: CustomButton(
                     color: ColorsManager.lightPurple,
                     text: 'Book It Now',
+                    fontSize: 12,
+                    isBold: false,
                     onPressed: () {},
                   ),
                 )
@@ -203,7 +206,7 @@ class HomeScreen extends StatelessWidget {
           itemCount: 8,
           shrinkWrap: true,
           scrollDirection: Axis.horizontal,
-          itemBuilder: (context, int i) =>CustomSubjectShape()
+          itemBuilder: (context, int i) =>CustomSubjectShape(image: AssetsManager.subject,text: 'physics',)
         ),
       );
   Widget _buildBestTeachers()=>SizedBox(

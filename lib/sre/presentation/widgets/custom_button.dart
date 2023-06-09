@@ -17,6 +17,7 @@ class CustomButton extends StatelessWidget {
   bool? isLogo;
   String? _image;
   bool? isBold;
+  double? fontSize;
   CustomButton(
       {required String text,
       bool outlined = false,
@@ -25,6 +26,7 @@ class CustomButton extends StatelessWidget {
       this.showLoading = false,
       String? image,
       this.isIcon = false,
+        this.fontSize = 15,
       this.isLogo = false,
       this.isBold = false,
       void Function()? onPressed,
@@ -49,9 +51,9 @@ class CustomButton extends StatelessWidget {
         backgroundColor: _outlined! ? ColorsManager.transparent : _color,
         padding: EdgeInsets.symmetric(
             vertical: AppHeight.s10 * AppConstants.height,
-            horizontal: AppWidth.s15 * AppConstants.width),
+           ),
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(AppConstants.circleRadius),
             side: _outlined!
                 ? BorderSide(color: ColorsManager.purpleNavy, width: 1)
                 : BorderSide.none),
@@ -60,28 +62,30 @@ class CustomButton extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           if (isLogo!) CustomSVGImage(image: _image!),
-
+          if (isLogo!) SizedBox(
+            width: AppConstants.width*AppWidth.s5,
+          ),
           Text(
             _text!,
             style: isBold!
                 ? getBoldStyle(
                     color: _outlined! ? _textColor! : ColorsManager.white,
-                    fontSize: AppWidth.s15 * AppConstants.width,
+                    fontSize:fontSize!,
                   )
                 : getRegularStyle(
                     color: _outlined! ? _textColor! : ColorsManager.white,
-                    fontSize: AppWidth.s18 * AppConstants.width,
+                    fontSize: fontSize!,
                   ),
           ),
           if (isIcon!)
             SizedBox(
-              width: 8,
+              width:  AppConstants.width*AppWidth.s8,
             ),
           if (isIcon!)
             CircleAvatar(
               child: Icon(Icons.arrow_forward,
-                  size: 15, color: ColorsManager.white),
-              radius: 8,
+                  size: AppWidth.s15 * AppConstants.width, color: ColorsManager.white),
+              radius: AppConstants.circleRadius,
               backgroundColor: ColorsManager.lightPurple,
             ),
           // if(showLoading!)Row(

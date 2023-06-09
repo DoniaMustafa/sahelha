@@ -46,7 +46,7 @@ class CustomTextField extends StatelessWidget {
     return Column(//set widgets vertically
         children: [
       Container(
-        padding: EdgeInsetsDirectional.symmetric(horizontal: 10),
+        // padding: EdgeInsetsDirectional.symmetric(horizontal: 10),
         decoration: BoxDecoration(
           color: textFormColor,
           boxShadow: [
