@@ -12,6 +12,7 @@ import 'package:sahelha_app/sre/home/presentation/screens/home_screen.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_button.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_svg_image.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_text_button.dart';
+import 'package:sahelha_app/sre/teacher/teacher.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   @override
@@ -94,7 +95,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
                         onPress: () async {
                           buildCircleCount();
                           // await setValue(IS_FIRST_TIME, false);
-                          HomeScreen().launch(context,
+                          TeacherScreen().launch(context,
                               isNewTask: true,
                               pageRouteAnimation: PageRouteAnimation.Fade);
                         },

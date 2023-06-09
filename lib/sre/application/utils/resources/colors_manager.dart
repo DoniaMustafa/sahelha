@@ -16,6 +16,7 @@ class ColorsManager {
   static  const Color lightPurple =  Color(0xff696DA0);
   //
   static const Color yellow = Color(0xffF2C225);
+  static const Color yellow2 = Color(0xFFECB3);
   //
   static const Color accentYellow = Color(0xffFFB41E);
    static const Color lightGray = Color(0xffB8B8D1);
@@ -27,7 +28,7 @@ class ColorsManager {
   // static const Color graniteGray = Color(0xff606060);
   // static const Color chineseSilver = Color(0xffC8C8C8);
   // static const Color graniteGray2 = Color(0xff665968);
-  // static const Color brightGray = Color(0xffeeeeee);
+  static const Color brightGray = Color(0xffeeeeee);
   // static const Color brightGray2 = Color(0xffE9E9E9);
   // static const Color davysGrey = Color(0xff50555C);
   // static const Color gainsboro2 = Color(0xffDFDFDF);
@@ -45,5 +46,5 @@ class ColorsManager {
   // static const Color pixiePowder= Color(0xff2B1190);
   static const Color transparent = Colors.transparent;
   // static const Color yellow = Colors.yellow;
-  // static const Color gray = Color(0xff7C7C7C);
+  static const Color gray = Color(0xff7C7C7C);
 }

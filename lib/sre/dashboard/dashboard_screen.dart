@@ -45,10 +45,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
           flat: true,
           controller: _controller,
           items: const[
-            RollingBottomBarItem(AssetsManager.home, label: 'Page 1',activeColor: ColorsManager.white),
-            RollingBottomBarItem(AssetsManager.star, label: 'Page 2',activeColor: ColorsManager.white),
-            RollingBottomBarItem(AssetsManager.booking, label: 'Page 3',activeColor: ColorsManager.white),
-            RollingBottomBarItem(AssetsManager.category, label: 'Page 3',activeColor: ColorsManager.white),
+            // RollingBottomBarItem(AssetsManager.home, label: 'Page 1',activeColor: ColorsManager.white),
+            // RollingBottomBarItem(AssetsManager.star, label: 'Page 2',activeColor: ColorsManager.white),
+            // RollingBottomBarItem(AssetsManager.booking, label: 'Page 3',activeColor: ColorsManager.white),
+            // RollingBottomBarItem(AssetsManager.category, label: 'Page 3',activeColor: ColorsManager.white),
 
           ],
           activeItemColor: ColorsManager.white,

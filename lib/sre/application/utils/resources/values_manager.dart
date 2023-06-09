@@ -304,6 +304,7 @@ class AppWidth {
   static const double s297 = 0.825;
   static const double s298 = 0.8277777777777777;
   static const double s299 = 0.8305555555555556;
+  static const double s300 = 0.8905555555555556;
   static final double s24_78 = 0.06883333333333334;
   static final double s17_5 = 0.04861111111111111;
   static final double s327 = 90.83333333333333;
