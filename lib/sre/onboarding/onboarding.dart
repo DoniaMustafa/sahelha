@@ -28,8 +28,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
   Color angleColor = ColorsManager.red;
   double angle = 0.35;
   Color backgroundColor = ColorsManager.red.withOpacity(0.6);
-  // Animation<double>? _animation;
-  // AnimationController? _animationController;
   @override
   void initState() {
     super.initState();
@@ -50,13 +48,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
 
       setState(() {});
     });
-    // _animationController =
-    //     AnimationController(vsync: this, value: pages.length.toDouble());
-    // _animation =
-    //     Tween<double>(begin: 0, end: 100).animate(_animationController!)
-    //       ..addListener(() {
-    //         setState(() {});
-    //       });
+
   }
 
   init() async {
@@ -86,7 +78,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
                   Row(
                     children: [
                       CustomSVGImage(
-                          image: AssetsManager.logo, height: 38, width: 38),
+                          image: AssetsManager.logo,
+                          height: AppConstants.height * AppHeight.s38,
+                          width: AppConstants.width * AppWidth.s38),
                       Spacer(
                         flex: 1,
                       ),
@@ -102,19 +96,25 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
                       )
                     ],
                   ),
-                  30.height,
+                  SizedBox(
+                    height: AppConstants.height * AppHeight.s30,
+                  ),
                   Image.network(
                     page.image.toString(),
                     height: 320,
                     width: 324,
                   ),
-                  76.height,
+                  SizedBox(
+                    height: AppConstants.height * AppHeight.s76,
+                  ),
                   Text(page.title.toString(),
                       style: boldTextStyle(
                           size: 15,
                           weight: FontWeight.w600,
                           color: Colors.black)),
-                  20.height,
+                  SizedBox(
+                    height: AppConstants.height * AppHeight.s20,
+                  ),
                   Text(
                     page.subTitle.toString(),
                     style: secondaryTextStyle(
@@ -125,12 +125,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
                     flex: 1,
                   ),
                   Row(
+                    // crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      buildCircleCount(),
-                      Spacer(
-                        flex: 1,
-                      ),
-                      buildNextBut(),
+                      Expanded(flex:2,child: buildCircleCount()),
+                      // Spacer(
+                      //   flex: 1,
+                      // ),
+                      Expanded(child: buildNextBut()),
                     ],
                   )
                 ],
@@ -151,16 +153,19 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
 
   Widget buildCircleCount() => SizedBox(
         // width: 10,
-        child: CircularPercentIndicator(
-          radius: 22.0,
-          lineWidth: 3.0,
-          percent: angle,
-          center: Text(
-            count,
-            style: getRegularStyle(color: angleColor),
+        child: Align(
+          alignment: Alignment.centerLeft,
+          child: CircularPercentIndicator(
+            radius: 22.0,
+            lineWidth: 3.0,
+            percent: angle,
+            center: Text(
+              count,
+              style: getRegularStyle(color: angleColor),
+            ),
+            backgroundColor: backgroundColor,
+            progressColor: angleColor,
           ),
-          backgroundColor: backgroundColor,
-          progressColor: angleColor,
         ),
       );
 
@@ -179,7 +184,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
           changeCircle();
         },
         text: currentPosition == 3 ? 'get start' : 'Next',
-        isIcon: true,
+        isIcon:currentPosition == 3? true:false,
       );
 
   void changeCircle() {

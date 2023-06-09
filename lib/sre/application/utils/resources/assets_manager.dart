@@ -31,6 +31,8 @@ class AssetsManager {
   static const String send = "$imagesPath/send.png";
   static const String verifyBackground = "$imagesPath/verify_background.png";
   static const String lock = "$imagesPath/lock.png";
+  static const String flag = "$imagesPath/flag.png";
+  static const String messages = "$imagesPath/flag.png";
 
 
 

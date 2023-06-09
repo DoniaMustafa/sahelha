@@ -85,6 +85,7 @@ class TeachersScreen extends StatelessWidget {
                 image: AssetsManager.teacherImg,
                 width: 90,
                 height: 80,
+                isBorderColor: true,
               ))
         ],
       );

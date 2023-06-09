@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sahelha_app/sre/all_locations_screen.dart';
 import 'package:sahelha_app/sre/auth/presentation/pages/signup_screen.dart';
 import 'package:sahelha_app/sre/auth/presentation/pages/verify_screen.dart';
 import 'package:sahelha_app/sre/dashboard/dashboard_screen.dart';
@@ -22,7 +23,7 @@ class _MyAppState extends State<MyApp> {
     return  MaterialApp(
         debugShowCheckedModeBanner: false,
         // navigatorKey: navigatorKey,
-        home: SplashScreen()
+        home: DashboardScreen()
 
     );
   }

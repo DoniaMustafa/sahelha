@@ -4,8 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:rolling_bottom_bar/rolling_bottom_bar.dart';
 import 'package:rolling_bottom_bar/rolling_bottom_bar_item.dart';
+import 'package:sahelha_app/sre/application/utils/constants/app_constants.dart';
 import 'package:sahelha_app/sre/application/utils/resources/assets_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/colors_manager.dart';
+import 'package:sahelha_app/sre/application/utils/resources/values_manager.dart';
+import 'package:sahelha_app/sre/booking/presentation/pages/booking_screen.dart';
 import 'package:sahelha_app/sre/category/category_screen.dart';
 import 'package:sahelha_app/sre/category/subject/presentation/pages/subject_screen.dart';
 import 'package:sahelha_app/sre/home/presentation/screens/home_screen.dart';
@@ -27,28 +30,35 @@ class _DashboardScreenState extends State<DashboardScreen> {
   PageController _controller = PageController();
   @override
   Widget build(BuildContext context) {
+    AppConstants.height = MediaQuery.of(context).size.height; /* app height*/
+    AppConstants.width = MediaQuery.of(context).size.width; /*appf width*/
+    AppConstants.margin = AppWidth.s23 * AppConstants.width; /*app margin*/
+    AppConstants.appBarHeight =
+        AppHeight.s90 * AppConstants.height; /*app margin*/
+    AppConstants.appBodyHeight = AppConstants.height -
+        AppHeight.s90 * AppConstants.height; /*app margin*/
     return DoublePressBackWidget(
       message: 'Press back again to exit app',
       child: Scaffold(
         body: PageView(
           controller: _controller,
-          children: const <Widget>[
+          children:  <Widget>[
             HomeScreen(),
             HomeScreen(),
-            HomeScreen(),
+            BookingScreen(),
             CategoryScreen(),
           ],
         ),
         extendBody: true,
         bottomNavigationBar: RollingBottomBar(
           color: ColorsManager.lightPurple,
-          flat: true,
+          flat: true,itemColor: ColorsManager.white ,
           controller: _controller,
           items: const[
-            // RollingBottomBarItem(AssetsManager.home, label: 'Page 1',activeColor: ColorsManager.white),
-            // RollingBottomBarItem(AssetsManager.star, label: 'Page 2',activeColor: ColorsManager.white),
-            // RollingBottomBarItem(AssetsManager.booking, label: 'Page 3',activeColor: ColorsManager.white),
-            // RollingBottomBarItem(AssetsManager.category, label: 'Page 3',activeColor: ColorsManager.white),
+            RollingBottomBarItem(AssetsManager.home, label: 'Home',activeColor:ColorsManager.white ),
+            RollingBottomBarItem(AssetsManager.messages, label: 'Messages',activeColor: ColorsManager.white),
+            RollingBottomBarItem(AssetsManager.booking, label: 'booking',activeColor: ColorsManager.white),
+            RollingBottomBarItem(AssetsManager.category, label: 'categories',activeColor: ColorsManager.white),
 
           ],
           activeItemColor: ColorsManager.white,
