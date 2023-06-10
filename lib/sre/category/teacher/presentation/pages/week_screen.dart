@@ -5,8 +5,8 @@ import 'package:sahelha_app/sre/application/utils/constants/app_constants.dart';
 import 'package:sahelha_app/sre/application/utils/resources/colors_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/styles_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/values_manager.dart';
+import 'package:sahelha_app/sre/presentation/widgets/teacher_notes_widget.dart';
 
-import '../presentation/widgets/teacher_notes_widget.dart';
 
 class WeeckScreen extends StatefulWidget {
   const WeeckScreen({Key? key}) : super(key: key);

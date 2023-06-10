@@ -12,6 +12,7 @@ import 'package:sahelha_app/sre/booking/presentation/pages/booking_screen.dart';
 import 'package:sahelha_app/sre/category/category_screen.dart';
 import 'package:sahelha_app/sre/category/subject/presentation/pages/subject_screen.dart';
 import 'package:sahelha_app/sre/home/presentation/screens/home_screen.dart';
+import 'package:sahelha_app/sre/messages/presentation/pages/messages_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   final bool? redirectToBooking;
@@ -43,10 +44,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
         body: PageView(
           controller: _controller,
           children:  <Widget>[
-            HomeScreen(),
-            HomeScreen(),
+            const   HomeScreen(),
+            const   MessagesScreen(),
             BookingScreen(),
-            CategoryScreen(),
+            const  CategoryScreen(),
           ],
         ),
         extendBody: true,

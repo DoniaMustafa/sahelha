@@ -11,6 +11,19 @@ TextStyle _getTextStyle(double fontSize, FontWeight fontWeight,
       fontWeight: fontWeight,
       color: color,
     );
+TextStyle getLightStyle(
+    {double fontSize = 12,
+      Color color = ColorsManager.black,
+      TextDecoration textDecoration = TextDecoration.none,
+      double? height}) =>
+    TextStyle(
+        fontSize: fontSize,
+        decoration: textDecoration,
+        fontWeight: FontWeightManager.light,
+        color: color,
+        fontFamily: FontConstants.fontFamily,
+        height: height);
+
 TextStyle getRegularStyle(
         {double fontSize = 12,
         Color color = ColorsManager.black,

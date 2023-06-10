@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:horizontal_calendar/horizontal_calendar.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:sahelha_app/sre/application/utils/constants/app_constants.dart';
 import 'package:sahelha_app/sre/application/utils/resources/colors_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/styles_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/values_manager.dart';
 
-import '../presentation/widgets/teacher_notes_widget.dart';
+import '../../../../presentation/widgets/teacher_notes_widget.dart';
 
 class DayScreen extends StatefulWidget {
-  const DayScreen({Key? key}) : super(key: key);
-
+   DayScreen({Key? key,}) : super(key: key);
   @override
   State<DayScreen> createState() => _DayScreenState();
 }

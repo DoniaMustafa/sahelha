@@ -5,12 +5,14 @@ import 'package:sahelha_app/sre/application/utils/constants/app_constants.dart';
 import 'package:sahelha_app/sre/application/utils/resources/colors_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/styles_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/values_manager.dart';
+import 'package:sahelha_app/sre/category/teacher/presentation/pages/teacher_profile.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_button.dart';
-import 'package:sahelha_app/sre/presentation/widgets/teacher_button.dart';
 
 class TeacherNotesWiget extends StatefulWidget {
   @override
   State<TeacherNotesWiget> createState() => _TeacherNotesWigetState();
+
+
 }
 
 class _TeacherNotesWigetState extends State<TeacherNotesWiget> {
@@ -63,83 +65,78 @@ class _TeacherNotesWigetState extends State<TeacherNotesWiget> {
         SizedBox(
           height: AppConstants.height * AppHeight.s15,
         ),
-        Padding(
-          padding: EdgeInsets.only(
-              left: AppConstants.width * AppWidth.s39,
-              right: AppConstants.width * AppWidth.s45),
-          child: Container(
-            width: AppConstants.width * AppWidth.s296,
-            height: AppConstants.height * AppHeight.s185,
-            decoration: BoxDecoration(
-              color: ColorsManager.purpleNavy,
-              borderRadius: BorderRadius.circular(13),
-            ),
-            child: Row(
-              children: [
-                6.width,
-                Container(
-                  width: AppConstants.width * AppWidth.s5,
-                  height: AppConstants.height * AppHeight.s150,
-                  decoration: BoxDecoration(
-                    color: ColorsManager.white,
-                    borderRadius: BorderRadius.circular(6),
-                  ),
+        Container(
+          margin: EdgeInsets.symmetric(horizontal: AppConstants.width * AppWidth.s39),
+          padding: EdgeInsetsDirectional.all(  AppConstants.width*AppWidth.s12),
+          // width: AppConstants.width * AppWidth.s296,
+          // height: AppConstants.height * AppHeight.s185,
+          decoration: BoxDecoration(
+            color: ColorsManager.purpleNavy,
+            borderRadius: BorderRadius.circular(AppConstants.width * AppWidth.s15),
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // SizedBox(width: AppConstants.width*AppWidth.s6,),
+              Container(
+                width: AppConstants.width * AppWidth.s5,
+                height: AppConstants.height * AppHeight.s160,
+                decoration: BoxDecoration(
+                  color: ColorsManager.white,
+                  borderRadius: BorderRadius.circular(AppConstants.width * AppWidth.s6),
                 ),
-                11.width,
-                Column(
+              ),
+              SizedBox(
+                width: AppConstants.width * AppWidth.s14,
+              ),
+              Expanded(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: AppConstants.width * AppWidth.s3,
-                          top: AppConstants.height * AppHeight.s13),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            width: AppConstants.width * AppWidth.s180,
-                            child: Text(
-                              'Math for first year of secondary school',
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 2,
-                              style: getMediumStyle(
-                                  fontSize: 14, color: ColorsManager.white),
-                            ),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(flex: 1,
+                          child: Text(
+                            'Math for first year of secondary school',
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 2,
+                            style: getMediumStyle(
+                              height: 1.2,
+                                fontSize: 14, color: ColorsManager.white),
                           ),
-                          SizedBox(
-                            width: AppConstants.width * AppWidth.s38,
+                        ),
+                        // if(StudentScreen.screenIndex==1)
+                        SizedBox(
+                          width: AppConstants.width * AppWidth.s38,
+                        ),
+                        if(TeacherProfileScreen.screenIndex==1)
+                        Container(
+                          width: AppConstants.width * AppWidth.s22,
+                          height: AppConstants.height * AppHeight.s22,
+                          decoration: BoxDecoration(
+                            color: ColorsManager.white,
+                            borderRadius: BorderRadius.circular(50),
                           ),
-                          Container(
-                            width: AppConstants.width * AppWidth.s22,
-                            height: AppConstants.height * AppHeight.s22,
-                            decoration: BoxDecoration(
-                              color: ColorsManager.white,
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                            child: Center(
-                                child: Icon(Icons.favorite,
-                                    color: Colors.red, size: 17)),
-                          ),
-                        ],
-                      ),
+                          child: Center(
+                              child: Icon(Icons.favorite,
+                                  color: Colors.red, size: 17)),
+                        ),
+                      ],
                     ),
-                    Padding(
-                        padding: EdgeInsets.only(
-                            left: AppConstants.width * AppWidth.s3,
-                            top: AppConstants.height * AppHeight.s13),
-                        child: Text(
-                          "11:00 AM - 11:30 AM",
-                          style: getMediumStyle(
-                              fontSize: 12, color: ColorsManager.brightGray),
-                        )),
+                    6.height,
+                    Text(
+                      "11:00 AM - 11:30 AM",
+                      style: getLightStyle(
+                          fontSize: 12, color: ColorsManager.whiteGrey),
+                    ),
                     10.height,
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        SizedBox(
-                          width: AppConstants.width * AppWidth.s190,
-                        ),
+
                         Text(
                           "+20",
                           style: getRegularStyle(
@@ -202,7 +199,7 @@ class _TeacherNotesWigetState extends State<TeacherNotesWiget> {
                       ],
                     ),
                     Container(
-                      width: AppConstants.width*AppWidth.s250,
+                      width: AppConstants.width*AppWidth.s263,
                       child: Slider(
                         value: height,
                         max:240,
@@ -217,13 +214,14 @@ class _TeacherNotesWigetState extends State<TeacherNotesWiget> {
                       ),
                     ),
                     Padding(
-                      padding:  EdgeInsets.only(left: AppConstants.width*AppWidth.s58),
-                      child: TeacherButton(text: 'Book it now', buttonColor: ColorsManager.white,)
+                      padding: const EdgeInsets.symmetric(horizontal: 50.0),
+                      child: CustomButton(text: 'Book it now', color: ColorsManager.white,
+                      textColor: ColorsManager.purpleNavy,),
                     )
                   ],
-                )
-              ],
-            ),
+                ),
+              )
+            ],
           ),
         )
       ],

@@ -9,7 +9,6 @@ import 'package:sahelha_app/sre/presentation/widgets/custom_png_image.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_svg_image.dart';
 
 class BookingScreen extends StatefulWidget {
-  BookingScreen({Key? key}) : super(key: key);
 
   @override
   State<BookingScreen> createState() => _BookingScreenState();

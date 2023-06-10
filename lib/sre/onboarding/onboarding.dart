@@ -8,11 +8,11 @@ import 'package:sahelha_app/sre/application/utils/resources/strings_manager.dart
 import 'package:sahelha_app/sre/application/utils/resources/styles_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/values_manager.dart';
 import 'package:sahelha_app/sre/choose_splash_screen.dart';
+import 'package:sahelha_app/sre/dashboard/dashboard_screen.dart';
 import 'package:sahelha_app/sre/home/presentation/screens/home_screen.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_button.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_svg_image.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_text_button.dart';
-import 'package:sahelha_app/sre/teacher/teacher.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   @override
@@ -89,7 +89,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
                         onPress: () async {
                           buildCircleCount();
                           // await setValue(IS_FIRST_TIME, false);
-                          TeacherScreen().launch(context,
+                          DashboardScreen().launch(context,
                               isNewTask: true,
                               pageRouteAnimation: PageRouteAnimation.Fade);
                         },

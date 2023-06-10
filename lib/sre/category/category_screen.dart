@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sahelha_app/sre/application/utils/constants/app_constants.dart';
 import 'package:sahelha_app/sre/application/utils/resources/assets_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/colors_manager.dart';
-import 'package:sahelha_app/sre/application/utils/resources/styles_manager.dart';
-import 'package:sahelha_app/sre/application/utils/resources/values_manager.dart';
 import 'package:sahelha_app/sre/category/subject/presentation/pages/subject_screen.dart';
 import 'package:sahelha_app/sre/category/teacher/presentation/pages/teachers_screen.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_%20tap.dart';
