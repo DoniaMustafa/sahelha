@@ -6,6 +6,8 @@ import 'package:sahelha_app/sre/dashboard/dashboard_screen.dart';
 import 'package:sahelha_app/sre/home/presentation/screens/home_screen.dart';
 import 'package:sahelha_app/sre/splash_screen.dart';
 
+import 'sre/category/teacher/presentation/pages/teacher_home_screen.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -23,7 +25,7 @@ class _MyAppState extends State<MyApp> {
     return  MaterialApp(
         debugShowCheckedModeBanner: false,
         // navigatorKey: navigatorKey,
-        home: DashboardScreen()
+        home: TeacherHomeScreen()
 
     );
   }

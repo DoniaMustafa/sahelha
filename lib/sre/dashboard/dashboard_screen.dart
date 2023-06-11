@@ -11,6 +11,8 @@ import 'package:sahelha_app/sre/application/utils/resources/values_manager.dart'
 import 'package:sahelha_app/sre/booking/presentation/pages/booking_screen.dart';
 import 'package:sahelha_app/sre/category/category_screen.dart';
 import 'package:sahelha_app/sre/category/subject/presentation/pages/subject_screen.dart';
+import 'package:sahelha_app/sre/category/teacher/presentation/pages/teacher_home_screen.dart';
+import 'package:sahelha_app/sre/category/teacher/presentation/pages/teachers_screen.dart';
 import 'package:sahelha_app/sre/home/presentation/screens/home_screen.dart';
 import 'package:sahelha_app/sre/messages/presentation/pages/messages_screen.dart';
 
@@ -47,7 +49,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
             const   HomeScreen(),
             const   MessagesScreen(),
             BookingScreen(),
-            const  CategoryScreen(),
+            TeacherHomeScreen(),
+            //const  CategoryScreen(),
           ],
         ),
         extendBody: true,
@@ -56,10 +59,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
           flat: true,itemColor: ColorsManager.white ,
           controller: _controller,
           items: const[
-            RollingBottomBarItem(AssetsManager.home, label: 'Home',activeColor:ColorsManager.white ),
-            RollingBottomBarItem(AssetsManager.messages, label: 'Messages',activeColor: ColorsManager.white),
-            RollingBottomBarItem(AssetsManager.booking, label: 'booking',activeColor: ColorsManager.white),
-            RollingBottomBarItem(AssetsManager.category, label: 'categories',activeColor: ColorsManager.white),
+            // RollingBottomBarItem(AssetsManager.home, label: 'Home',activeColor:ColorsManager.white ),
+            // RollingBottomBarItem(AssetsManager.messages, label: 'Messages',activeColor: ColorsManager.white),
+            // RollingBottomBarItem(AssetsManager.booking, label: 'booking',activeColor: ColorsManager.white),
+            // RollingBottomBarItem(AssetsManager.category, label: 'categories',activeColor: ColorsManager.white),
 
           ],
           activeItemColor: ColorsManager.white,

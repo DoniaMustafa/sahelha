@@ -7,6 +7,7 @@ import 'package:sahelha_app/sre/application/utils/resources/styles_manager.dart'
 import 'package:sahelha_app/sre/application/utils/resources/values_manager.dart';
 import 'package:sahelha_app/sre/category/teacher/presentation/pages/teacher_profile.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_button.dart';
+import 'package:sahelha_app/sre/presentation/widgets/custom_three_images.dart';
 
 class TeacherNotesWiget extends StatefulWidget {
   @override
@@ -55,7 +56,7 @@ class _TeacherNotesWigetState extends State<TeacherNotesWiget> {
                   ),
                 ),
               ),
-              7.width,
+                SizedBox(width: AppConstants.width*AppWidth.s7,),
               Text("11.0",
                   style:
                       getBoldStyle(color: ColorsManager.black, fontSize: 15)),
@@ -126,13 +127,17 @@ class _TeacherNotesWigetState extends State<TeacherNotesWiget> {
                         ),
                       ],
                     ),
-                    6.height,
+                    SizedBox(
+                      height: AppConstants.height * AppHeight.s6,
+                    ),
                     Text(
                       "11:00 AM - 11:30 AM",
                       style: getLightStyle(
                           fontSize: 12, color: ColorsManager.whiteGrey),
                     ),
-                    10.height,
+                    SizedBox(
+                      height: AppConstants.height * AppHeight.s10,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
@@ -142,60 +147,10 @@ class _TeacherNotesWigetState extends State<TeacherNotesWiget> {
                           style: getRegularStyle(
                               fontSize: 12, color: ColorsManager.white),
                         ),
-                        5.width,
-                        Stack(
-                          children: [
-                            Container(
-                              width: AppConstants.width * AppWidth.s14,
-                              height: AppConstants.height * AppHeight.s14,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                                  border: Border.all(
-                                      color: ColorsManager.purpleNavy,
-                                      width: 1
-                                  )
-                              ),
-                              child: Image(
-                                image: AssetImage("assets/images_png/user.png"),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 9),
-                              child: Container(
-                                width: AppConstants.width * AppWidth.s14,
-                                height: AppConstants.height * AppHeight.s14,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(50),
-                                  border: Border.all(
-                                    color: ColorsManager.purpleNavy,
-                                    width: 1
-                                  )
-                                ),
-                                child: Image(
-                                  image: AssetImage("assets/images_png/user.png"),
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 18),
-                              child: Container(
-                                width: AppConstants.width * AppWidth.s14,
-                                height: AppConstants.height * AppHeight.s14,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(50),
-                                    border: Border.all(
-                                        color: ColorsManager.purpleNavy,
-                                        width: 1
-                                    )
-                                ),
-                                child: Image(
-                                  image: AssetImage("assets/images_png/user.png"),
-                                ),
-                              ),
-                            ),
-                          ],
-                        )
+                        SizedBox(
+                          width: AppConstants.width * AppWidth.s5,
+                        ),
+                        customThreeImages(ColorsManager.purpleNavy)
                       ],
                     ),
                     Container(

@@ -122,7 +122,9 @@ class _WeeckScreenState extends State<WeeckScreen> {
             },
           ),
              ),
-        29.height,
+        SizedBox(
+          height: AppConstants.height*AppHeight.s29,
+        ),
         SizedBox(
           height: 420,
           child: ListView.separated(
