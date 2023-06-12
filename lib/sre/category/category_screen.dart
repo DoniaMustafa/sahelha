@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:sahelha_app/sre/application/utils/resources/assets_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/colors_manager.dart';
-import 'package:sahelha_app/sre/category/subject/presentation/pages/subject_screen.dart';
-import 'package:sahelha_app/sre/category/teacher/presentation/pages/teachers_screen.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_%20tap.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_textform.dart';
+import 'package:sahelha_app/sre/subject/presentation/pages/subject_screen.dart';
+import 'package:sahelha_app/sre/teacher/presentation/pages/category_teacher_screen.dart';
 
 class CategoryScreen extends StatefulWidget {
   const CategoryScreen({Key? key}) : super(key: key);
@@ -37,10 +37,11 @@ class _CategoryScreenState extends State<CategoryScreen> {
               ),
               // SizedBox(height: 24,),
               CustomTextField(
-                  textFormColor: ColorsManager.white.withOpacity(0.2),
+                  textFormColor: ColorsManager.whiteGrey.withOpacity(0.1),
                   isSuffix: true,
                   onSaved: (String? text) {},
                   suffixIcon: AssetsManager.search,
+                  // prefixIcon: AssetsManager.flag,isPrefix: true,
                   hintText: 'Search'),
               SizedBox(
                 height: 37,
@@ -50,7 +51,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                   ? Expanded(
                       child: SubjectScreen(),
                     )
-                  : Expanded(child: TeachersScreen())
+                  : Expanded(child: CategoryTeachersScreen())
             ],
           ),
         ),

@@ -2,32 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:sahelha_app/sre/application/utils/resources/assets_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/colors_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/styles_manager.dart';
-import 'package:sahelha_app/sre/category/teacher/presentation/pages/teacher_profile.dart';
+import 'package:sahelha_app/sre/presentation/widgets/custom_icon.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_png_image.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_subject_shape.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_svg_image.dart';
+import 'package:sahelha_app/sre/teacher/presentation/pages/teacher_profile.dart';
 
-class TeachersScreen extends StatelessWidget {
-  const TeachersScreen({Key? key}) : super(key: key);
+class CategoryTeachersScreen extends StatelessWidget {
+  const CategoryTeachersScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
         shrinkWrap: true,
         itemCount: 10,
-
         itemBuilder: (context, index) => _buildItem(context));
   }
 
   Widget _buildItem(context) => GestureDetector(
-    onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>TeacherProfileScreen())),
-    child: Stack(
+        onTap: () => Navigator.push(context,
+            MaterialPageRoute(builder: (context) => TeacherProfileScreen())),
+        child: Stack(
           children: [
             Container(
               padding:
                   EdgeInsetsDirectional.symmetric(vertical: 20, horizontal: 10),
               margin:
-                  EdgeInsetsDirectional.symmetric( horizontal: 15,vertical: 10),
+                  EdgeInsetsDirectional.symmetric(horizontal: 15, vertical: 10),
               decoration: BoxDecoration(
                   color: ColorsManager.whiteGrey.withOpacity(0.2),
                   borderRadius: BorderRadius.all(Radius.circular(5))),
@@ -67,10 +68,10 @@ class TeachersScreen extends StatelessWidget {
                             textAlign: TextAlign.center,
                           ),
                           SizedBox(width: 2),
-                          CustomSVGImage(
-                            image: AssetsManager.rating,
-                            height: 10,
-                            width: 10,
+                          CustomIcon(
+                            icon: Icons.star,
+                            iconColor: ColorsManager.yellow,
+                            size: 15,
                           )
                         ],
                       ),
@@ -92,5 +93,5 @@ class TeachersScreen extends StatelessWidget {
                 ))
           ],
         ),
-  );
+      );
 }

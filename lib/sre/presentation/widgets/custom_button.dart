@@ -13,31 +13,46 @@ class CustomButton extends StatelessWidget {
   Color? _color;
   bool? _outlined;
   bool? showLoading;
-  bool? isIcon;
-  bool? isLogo;
+  bool? _isIcon;
+  bool? _isLogo;
   String? _image;
-  bool? isBold;
-  double? fontSize;
+  bool? _isBold;
+  double? _fontSize;
+  double? _width;
+  Color? _iconColor;
+  double? _height;
+
   CustomButton(
       {required String text,
       bool outlined = false,
-      Color color = ColorsManager.lightPurple,
+        Color iconColor = ColorsManager.lightPurple,
+      Color color = ColorsManager.purpleNavy,
       Color textColor = ColorsManager.white,
       this.showLoading = false,
       String? image,
-      this.isIcon = false,
-        this.fontSize = 15,
-      this.isLogo = false,
-      this.isBold = false,
+      double  width =20,
+      double  height=20,
+      bool isIcon = false,
+      double? fontSize = 15,
+      bool isLogo = false,
+        bool? isBold = false,
       void Function()? onPressed,
       Key? key})
       : super(key: key) {
+
+    _isBold=isBold;
+    _iconColor=iconColor;
+    _isIcon = isIcon;
+    _isLogo = isLogo;
     _text = text;
     _onPressed = onPressed;
     _color = color;
     _textColor = textColor;
     _outlined = outlined;
     _image = image;
+    _fontSize = fontSize;
+    _width = width;
+    _height = height;
   }
 
   @override
@@ -50,8 +65,8 @@ class CustomButton extends StatelessWidget {
         elevation: 0,
         backgroundColor: _outlined! ? ColorsManager.transparent : _color,
         padding: EdgeInsets.symmetric(
-            vertical: AppHeight.s10 * AppConstants.height,
-           ),
+          vertical: AppHeight.s10 * AppConstants.height,
+        ),
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppConstants.circleRadius),
             side: _outlined!
@@ -60,33 +75,42 @@ class CustomButton extends StatelessWidget {
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          if (isLogo!) CustomSVGImage(image: _image!),
-          if (isLogo!) SizedBox(
-            width: AppConstants.width*AppWidth.s5,
-          ),
+          if (_isLogo!)
+            CustomPngImage(
+              image: _image!,
+              isBorderColor: true,
+              width: _width!,
+              height: _height!,
+            ),
+          if (_isLogo!)
+            SizedBox(
+              width: AppConstants.width * AppWidth.s5,
+            ),
           Text(
             _text!,
-            style: isBold!
+            style: _isBold!
                 ? getBoldStyle(
-                    color: _outlined! ? _textColor! : ColorsManager.white,
-                    fontSize:fontSize!,
+                    color: _textColor!,
+                    fontSize: _fontSize!,
                   )
                 : getRegularStyle(
-                    color: _outlined! ? _textColor! : ColorsManager.white,
-                    fontSize: fontSize!,
+                    color: _textColor!,
+                    fontSize: _fontSize!,
                   ),
           ),
-          if (isIcon!)
+          if (_isIcon!)
             SizedBox(
-              width:  AppConstants.width*AppWidth.s8,
+              width: AppConstants.width * AppWidth.s8,
             ),
-          if (isIcon!)
+          if (_isIcon!)
             CircleAvatar(
               child: Icon(Icons.arrow_forward,
-                  size: AppWidth.s15 * AppConstants.width, color: ColorsManager.white),
+                  size: AppWidth.s15 * AppConstants.width,
+                  color: ColorsManager.white),
               radius: AppConstants.circleRadius,
-              backgroundColor: ColorsManager.lightPurple,
+              backgroundColor:_iconColor,
             ),
           // if(showLoading!)Row(
           //   children: [

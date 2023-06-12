@@ -4,10 +4,10 @@ import 'package:sahelha_app/sre/application/utils/constants/app_constants.dart';
 import 'package:sahelha_app/sre/application/utils/resources/colors_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/styles_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/values_manager.dart';
-import 'package:sahelha_app/sre/category/teacher/presentation/pages/month_screen.dart';
-import 'package:sahelha_app/sre/category/teacher/presentation/pages/week_screen.dart';
 import 'package:sahelha_app/sre/presentation/widgets/teacher_image_widget.dart';
-import 'package:sahelha_app/sre/category/teacher/presentation/pages/day_screen.dart';
+import 'package:sahelha_app/sre/teacher/presentation/pages/day_screen.dart';
+import 'package:sahelha_app/sre/teacher/presentation/pages/month_screen.dart';
+import 'package:sahelha_app/sre/teacher/presentation/pages/week_screen.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
 class TeacherProfileScreen extends StatefulWidget {

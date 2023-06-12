@@ -7,11 +7,12 @@ class ColorsManager {
   static const Color darkBlue = Color(0xff26395D);
   static  const Color purpleNavy =  Color(0xff5B5F97);
   static const Color green = Color(0xff4BBC71);
+  static const Color accentGreen= Color(0xff6BFFB5);
   static const Color white = Colors.white;
   // static const Color primary = Colors.white;
   static const Color platinum = Color(0xffE7E7E7);
 
-  static  const Color maximumPurple =  Color(0xff5B5F97);
+  // static  const Color maximumPurple =  Color(0xff5B5F97);
 
   static  const Color lightPurple =  Color(0xff696DA0);
   //

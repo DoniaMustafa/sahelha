@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       body: Container(
-        padding:const EdgeInsets.only(right: 20, left: 20, top: 50, bottom: 20),
+        padding:const EdgeInsets.only(right: 20, left: 20, top: 50, bottom: 50),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -47,7 +47,7 @@ class HomeScreen extends StatelessWidget {
               ),
               _buildBestTeachers(),
               const  SizedBox(
-                height: 20,
+                height: 50,
               ),
             ],
           ),
@@ -59,7 +59,7 @@ class HomeScreen extends StatelessWidget {
   Widget _buildUserInfoAndIcons() => Row(
         children: [
           CustomPngImage(isBorderColor: true,
-              image: AssetsManager.user, height: 48, width: 48, isBorder: true),
+              image: AssetsManager.user, height: 48, width: 48, isBorder: true,),
           SizedBox(
             width: 5
             // AppConstants.width * AppWidth.s5,

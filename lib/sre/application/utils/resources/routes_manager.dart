@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:sahelha_app/sre/auth/presentation/pages/signup_screen.dart';
+import 'package:sahelha_app/sre/auth/presentation/pages/verify_screen.dart';
+import 'package:sahelha_app/sre/choose_screen.dart';
+import 'package:sahelha_app/sre/dashboard/dashboard_screen.dart';
+import 'package:sahelha_app/sre/onboarding/onboarding.dart';
+import 'package:sahelha_app/sre/splash_screen.dart';
 
 class Routes {
   Routes._internal();
-  static const String getStartedRoute = "/get started";
+  static const String onBoardingRoute = "/on boarding";
   static const String splashRoute = "/";
   static const String loginRoute = "/login";
-  static const String clientApplyRoute = "/register";
+  static const String signUpRoute = "/signUp";
   static const String mainRoute = "/main";
   static const String homeRoute = "/home";
-  static const String cartRoute = "/cart";
-  static const String foodDetailsRoute = "/foodDetails";
+  static const String dashboardRoute = "/dashboard";
+  static const String chooseRoute = "/ChooseScreen";
   static const String mapRoute = "/my location";
   static const String verificationRoute = "/verification";
   static const String categoryRoute = "/category";
@@ -53,24 +59,26 @@ class RouteGenerator {
   static Route<dynamic>? getRoute(RouteSettings routeSettings) {
     debugPrint(routeSettings.name);
     switch (routeSettings.name) {
-    //   case Routes.getStartedRoute:
-    //     return pageFadeTransition(widget: const GetStartedScreen(), routeSettings: routeSettings);
-    //   case Routes.splashRoute:
-    //     return pageFadeTransition(widget: const SplashScreen(), routeSettings: routeSettings);
+      case Routes.onBoardingRoute:
+        return pageFadeTransition(widget: OnBoardingScreen(), routeSettings: routeSettings);
+      case Routes.splashRoute:
+        return pageFadeTransition(widget: SplashScreen(), routeSettings: routeSettings);
+
     //   case Routes.loginRoute:
     //     return pageFadeTransition(widget: LoginScreen(), routeSettings: routeSettings);
-    //   case Routes.homeRoute:
-    //     return pageFadeTransition(widget: HomeScreen(), routeSettings: routeSettings);
-    //   case Routes.cartRoute:
-    //     return pageFadeTransition(widget: CartScreen(), routeSettings: routeSettings);
-    //   case Routes.foodDetailsRoute:
-    //     return pageFadeTransition(widget: FoodDetailsScreen(), routeSettings: routeSettings);
+      case Routes.signUpRoute:
+        return pageFadeTransition(widget: SignUpScreen(), routeSettings: routeSettings);
+      case Routes.verificationRoute:
+        return pageFadeTransition(widget: VerificationScreen(), routeSettings: routeSettings);
+
+      case Routes.dashboardRoute:
+        return pageFadeTransition(widget: DashboardScreen(), routeSettings: routeSettings);
+      case Routes.chooseRoute:
+        return pageFadeTransition(widget: ChooseScreen(), routeSettings: routeSettings);
     //   case Routes.mapRoute:
     //     return pageFadeTransition(widget: MapScreen(), routeSettings: routeSettings);
     //   case Routes.clientApplyRoute:
     //     return pageFadeTransition(widget: ClientApplyScreen(), routeSettings: routeSettings);
-    //   case Routes.verificationRoute:
-    //     return pageFadeTransition(widget: VerificationScreen(), routeSettings: routeSettings);
     //   case Routes.categoryRoute:
     //     return pageFadeTransition(widget: CategoryScreen(), routeSettings: routeSettings);
     //   case Routes.addFoodRoute:

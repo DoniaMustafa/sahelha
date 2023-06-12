@@ -5,11 +5,11 @@ import 'package:sahelha_app/sre/application/utils/resources/colors_manager.dart'
 import 'package:sahelha_app/sre/application/utils/resources/styles_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/values_manager.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_%20tap.dart';
+import 'package:sahelha_app/sre/presentation/widgets/custom_icon.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_png_image.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_svg_image.dart';
 
 class BookingScreen extends StatefulWidget {
-
   @override
   State<BookingScreen> createState() => _BookingScreenState();
 }
@@ -54,10 +54,10 @@ class _BookingScreenState extends State<BookingScreen> {
             horizontal: AppConstants.width * AppWidth.s15,
             vertical: AppConstants.height * AppHeight.s10),
         padding: EdgeInsetsDirectional.only(
-
             start: AppConstants.width * AppWidth.s15,
             end: AppConstants.width * AppWidth.s15,
-            top: AppConstants.height * AppHeight.s12,bottom: AppConstants.height * AppHeight.s20 ),
+            top: AppConstants.height * AppHeight.s12,
+            bottom: AppConstants.height * AppHeight.s20),
         decoration: BoxDecoration(
             color: ColorsManager.lightGray.withOpacity(0.2),
             borderRadius: BorderRadius.all(
@@ -81,10 +81,12 @@ class _BookingScreenState extends State<BookingScreen> {
                 // Spacer(
                 //   flex: 1,
                 // ),
-                CircleAvatar(
-                  backgroundColor:  ColorsManager.white,
-                    radius: 13,
-                    child: Icon(Icons.favorite,color: ColorsManager.red,size: 20,))
+                CustomIcon(
+                  icon: Icons.favorite,
+                  iconColor: ColorsManager.red,
+                  isColor: true,
+                  color: ColorsManager.white,
+                )
               ],
             ),
             SizedBox(
@@ -94,14 +96,14 @@ class _BookingScreenState extends State<BookingScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  height: AppConstants.height*AppHeight.s80,
-                  width: AppConstants.width*AppWidth.s5,
+                  height: AppConstants.height * AppHeight.s80,
+                  width: AppConstants.width * AppWidth.s5,
                   decoration: BoxDecoration(
-                      color: ColorsManager.maximumPurple,
+                      color: ColorsManager.purpleNavy,
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                 ),
                 SizedBox(
-                  width: AppConstants.width*AppWidth.s5,
+                  width: AppConstants.width * AppWidth.s5,
                 ),
                 Expanded(
                   flex: 1,
@@ -112,7 +114,7 @@ class _BookingScreenState extends State<BookingScreen> {
                       height: AppConstants.width * AppWidth.s73),
                 ),
                 SizedBox(
-                  width: AppConstants.width*AppWidth.s10,
+                  width: AppConstants.width * AppWidth.s10,
                 ),
                 Expanded(
                     flex: 2,
@@ -121,14 +123,14 @@ class _BookingScreenState extends State<BookingScreen> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         SizedBox(
-                          height: AppConstants.height*AppHeight.s3,
+                          height: AppConstants.height * AppHeight.s3,
                         ),
                         Text(
                           'MS. Hassnaa Adel',
                           style: getRegularStyle(fontSize: 12),
                         ),
                         SizedBox(
-                          height:AppConstants.height*AppHeight.s5,
+                          height: AppConstants.height * AppHeight.s5,
                         ),
                         Text(
                           'Math for the first year of secondary school',

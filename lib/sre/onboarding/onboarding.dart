@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:sahelha_app/sre/application/utils/constants/app_constants.dart';
 import 'package:sahelha_app/sre/application/utils/resources/assets_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/colors_manager.dart';
+import 'package:sahelha_app/sre/application/utils/resources/routes_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/strings_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/styles_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/values_manager.dart';
-import 'package:sahelha_app/sre/choose_splash_screen.dart';
-import 'package:sahelha_app/sre/dashboard/dashboard_screen.dart';
-import 'package:sahelha_app/sre/home/presentation/screens/home_screen.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_button.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_svg_image.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_text_button.dart';
@@ -31,7 +30,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
   @override
   void initState() {
     super.initState();
-    init();
+
     afterBuildCreated(() async {
       pages.add(WalkThroughModelClass(
           title: AppStrings.walkTitle1,
@@ -48,11 +47,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
 
       setState(() {});
     });
-
+    init();
   }
-
   init() async {
     pageController = PageController(initialPage: 0);
+
   }
 
   @override
@@ -81,7 +80,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
                           image: AssetsManager.logo,
                           height: AppConstants.height * AppHeight.s38,
                           width: AppConstants.width * AppWidth.s38),
-                      Spacer(
+                     const Spacer(
                         flex: 1,
                       ),
                       CustomTextButton(
@@ -89,9 +88,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
                         onPress: () async {
                           buildCircleCount();
                           // await setValue(IS_FIRST_TIME, false);
-                          DashboardScreen().launch(context,
-                              isNewTask: true,
-                              pageRouteAnimation: PageRouteAnimation.Fade);
+                          // Navigator.pushNamed(context, Routes.signUpRoute);
+                          Navigator.pushNamed(context, Routes.chooseRoute);
+                          // DashboardScreen().launch(context,
+                          //     isNewTask: true,
+                          //     pageRouteAnimation: PageRouteAnimation.Fade);
                         },
                       )
                     ],
@@ -99,8 +100,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
                   SizedBox(
                     height: AppConstants.height * AppHeight.s30,
                   ),
-                  Image.network(
-                    page.image.toString(),
+                  Lottie.asset(
+                    pages[index].image.toString(),
                     height: 320,
                     width: 324,
                   ),
@@ -121,7 +122,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
                         size: 12, weight: FontWeight.w500, color: Colors.black),
                     textAlign: TextAlign.center,
                   ),
-                  Spacer(
+                  const   Spacer(
                     flex: 1,
                   ),
                   Row(
@@ -171,19 +172,21 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
 
   Widget buildNextBut() => CustomButton(
         isBold: true,
+        iconColor: ColorsManager.white.withOpacity(0.6),
         onPressed: () async {
           changeCircle();
           if (currentPosition == 3) {
             // await setValue(IS_FIRST_TIME, false);
-            ChooseSplashScreen().launch(context,
-                isNewTask: true, pageRouteAnimation: PageRouteAnimation.Fade);
+            Navigator.pushNamed(context, Routes.chooseRoute);
+            // ChooseScreen().launch(context,
+            //     isNewTask: true, pageRouteAnimation: PageRouteAnimation.Fade);
           } else {
             pageController.nextPage(
                 duration: 500.milliseconds, curve: Curves.linearToEaseOut);
           }
           changeCircle();
         },
-        text: currentPosition == 3 ? 'get start' : 'Next',
+        text: currentPosition == 3 ? 'Get Start' : 'Next',
         isIcon:currentPosition == 3? true:false,
       );
 

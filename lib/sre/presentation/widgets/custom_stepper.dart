@@ -126,12 +126,12 @@ class StepperComponent extends StatelessWidget {
     //widget
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
+      // mainAxisSize: MainAxisSize.min,
       children: [
         Expanded(
           flex: 1,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               GestureDetector(
                 onTap: onTap,
@@ -155,7 +155,7 @@ class StepperComponent extends StatelessWidget {
               ),
               Container(
                 width: 2,
-                height: isLast?0:50,
+                height: isLast?0:60,
                 alignment: Alignment.center,
                 color:  ColorsManager.accentYellow,
               )

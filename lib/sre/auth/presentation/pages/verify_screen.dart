@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sahelha_app/sre/application/utils/constants/app_constants.dart';
 import 'package:sahelha_app/sre/application/utils/resources/assets_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/colors_manager.dart';
+import 'package:sahelha_app/sre/application/utils/resources/routes_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/styles_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/values_manager.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_button.dart';
@@ -31,12 +32,13 @@ class VerificationScreen extends StatelessWidget {
                       size: 20,
                     ),
                     SizedBox(
-                      width: 50,
+                      width: 40,
                     ),
                     CustomPngImage(
+                      isBorderColor: true,
                       image: AssetsManager.verifyBackground,
-                      height: 230,
-                      width: 256,
+                      height: 220,
+                      width: 255,
                     ),
                   ],
                 ),
@@ -48,7 +50,7 @@ class VerificationScreen extends StatelessWidget {
                   style: getBoldStyle(fontSize: 25),
                 ),
                 SizedBox(
-                  height: 46,
+                  height: 20,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15.0),
@@ -59,67 +61,70 @@ class VerificationScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 50,
+                  height: 40,
                 ),
-                CustomPinCodeTextField(
-                  alignment: AlignmentDirectional.center,
-                  // showError: ErrorsManagerCubit.contains(
-                  //     context, AppErrors.pinCodeEmptyError) ||
-                  //     ErrorsManagerCubit.contains(
-                  //         context, AppErrors.pinCodeInvalidError) ||
-                  //     ErrorsManagerCubit.contains(
-                  //         context, AppErrors.pinCodeNotMatchedError),
-                  // message: ErrorsManagerCubit.contains(
-                  //     context, AppErrors.pinCodeEmptyError)
-                  //     ? ErrorsManagerCubit.getErrorMessage(
-                  //     context, AppErrors.pinCodeEmptyError)
-                  //     : ErrorsManagerCubit.contains(
-                  //     context, AppErrors.pinCodeInvalidError)
-                  //     ? ErrorsManagerCubit.getErrorMessage(
-                  //     context, AppErrors.pinCodeInvalidError)
-                  //     : ErrorsManagerCubit.contains(
-                  //     context, AppErrors.pinCodeNotMatchedError)
-                  //     ? ErrorsManagerCubit.getErrorMessage(
-                  //     context, AppErrors.pinCodeNotMatchedError)
-                  //     : null,
-                  onSaved: (text) {}, onChanged: (String text) {  },
-                  //   if (text!.isEmpty) {
-                  //     ErrorsManagerCubit.addErrorType(
-                  //         context, AppErrors.pinCodeEmptyError);
-                  //     return;
-                  //   } else if (text.length <
-                  //       AppConstants.pinCodeNumberOfDigits) {
-                  //     ErrorsManagerCubit.addErrorType(
-                  //         context, AppErrors.pinCodeInvalidError);
-                  //     return;
-                  //   } else if (int.parse(text) != otp) {
-                  //     ErrorsManagerCubit.addErrorType(
-                  //         context, AppErrors.pinCodeNotMatchedError);
-                  //     return;
-                  //   }
-                  //   otp = int.parse(text!);
-                  // },
-                  // onChanged: (text) {
-                  //   if (ErrorsManagerCubit.contains(
-                  //       context, AppErrors.pinCodeEmptyError)) {
-                  //     ErrorsManagerCubit.removeError(
-                  //         context, AppErrors.pinCodeEmptyError);
-                  //   }
-                  //   if (text.length == 4 &&
-                  //       ErrorsManagerCubit.contains(
-                  //           context, AppErrors.pinCodeInvalidError)) {
-                  //     ErrorsManagerCubit.removeError(
-                  //         context, AppErrors.pinCodeInvalidError);
-                  //   }
-                  //   if (ErrorsManagerCubit.contains(
-                  //       context, AppErrors.pinCodeNotMatchedError)) {
-                  //     ErrorsManagerCubit.removeError(
-                  //         context, AppErrors.pinCodeNotMatchedError);
-                  //   }
-                  // },
+                Padding(
+                  padding:  EdgeInsets.symmetric(horizontal:AppConstants.width*AppWidth.s50),
+                  child: CustomPinCodeTextField(
+                    alignment: AlignmentDirectional.center,
+                    // showError: ErrorsManagerCubit.contains(
+                    //     context, AppErrors.pinCodeEmptyError) ||
+                    //     ErrorsManagerCubit.contains(
+                    //         context, AppErrors.pinCodeInvalidError) ||
+                    //     ErrorsManagerCubit.contains(
+                    //         context, AppErrors.pinCodeNotMatchedError),
+                    // message: ErrorsManagerCubit.contains(
+                    //     context, AppErrors.pinCodeEmptyError)
+                    //     ? ErrorsManagerCubit.getErrorMessage(
+                    //     context, AppErrors.pinCodeEmptyError)
+                    //     : ErrorsManagerCubit.contains(
+                    //     context, AppErrors.pinCodeInvalidError)
+                    //     ? ErrorsManagerCubit.getErrorMessage(
+                    //     context, AppErrors.pinCodeInvalidError)
+                    //     : ErrorsManagerCubit.contains(
+                    //     context, AppErrors.pinCodeNotMatchedError)
+                    //     ? ErrorsManagerCubit.getErrorMessage(
+                    //     context, AppErrors.pinCodeNotMatchedError)
+                    //     : null,
+                    onSaved: (text) {}, onChanged: (String text) {  },
+                    //   if (text!.isEmpty) {
+                    //     ErrorsManagerCubit.addErrorType(
+                    //         context, AppErrors.pinCodeEmptyError);
+                    //     return;
+                    //   } else if (text.length <
+                    //       AppConstants.pinCodeNumberOfDigits) {
+                    //     ErrorsManagerCubit.addErrorType(
+                    //         context, AppErrors.pinCodeInvalidError);
+                    //     return;
+                    //   } else if (int.parse(text) != otp) {
+                    //     ErrorsManagerCubit.addErrorType(
+                    //         context, AppErrors.pinCodeNotMatchedError);
+                    //     return;
+                    //   }
+                    //   otp = int.parse(text!);
+                    // },
+                    // onChanged: (text) {
+                    //   if (ErrorsManagerCubit.contains(
+                    //       context, AppErrors.pinCodeEmptyError)) {
+                    //     ErrorsManagerCubit.removeError(
+                    //         context, AppErrors.pinCodeEmptyError);
+                    //   }
+                    //   if (text.length == 4 &&
+                    //       ErrorsManagerCubit.contains(
+                    //           context, AppErrors.pinCodeInvalidError)) {
+                    //     ErrorsManagerCubit.removeError(
+                    //         context, AppErrors.pinCodeInvalidError);
+                    //   }
+                    //   if (ErrorsManagerCubit.contains(
+                    //       context, AppErrors.pinCodeNotMatchedError)) {
+                    //     ErrorsManagerCubit.removeError(
+                    //         context, AppErrors.pinCodeNotMatchedError);
+                    //   }
+                    // },
+                  ),
                 ),
                 SizedBox(
-                  height: 73,
+                  height: 30,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -138,25 +143,24 @@ class VerificationScreen extends StatelessWidget {
                     )
                   ],
                 ),
+
                 SizedBox(
-                  height: 30,
-                ),
-                SizedBox(
-                  height: 60,
+                  height: 50,
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 120),
-                  child: CustomButton(
+                  padding: const EdgeInsets.symmetric(horizontal: 100),
+                  child: CustomButton(onPressed: (){},
                     text: 'Send Again',
-                    textColor: ColorsManager.purpleNavy,outlined: true,
+                    textColor: ColorsManager.purpleNavy,
+                    outlined: true,
                   ),
                 ),
                 SizedBox(
                   height: 20,
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 120),
-                  child: CustomButton(text:'Submit',)
+                  padding: const EdgeInsets.symmetric(horizontal: 100),
+                  child: CustomButton(text:'Submit',onPressed: ()=>Navigator.pushNamed(context, Routes.dashboardRoute),isIcon: true,)
 
                 ),
               ],

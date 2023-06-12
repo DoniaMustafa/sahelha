@@ -4,6 +4,7 @@ import 'package:sahelha_app/sre/application/utils/constants/app_constants.dart';
 import 'package:sahelha_app/sre/application/utils/resources/assets_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/colors_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/fonts_manager.dart';
+import 'package:sahelha_app/sre/application/utils/resources/routes_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/strings_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/styles_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/values_manager.dart';
@@ -57,8 +58,9 @@ class _SplashScreenState extends State<SplashScreen> {
         //   }
         // });
         // await 10000.milliseconds.delay;
-        AllLocationsScreen().launch(context,
-            isNewTask: true, pageRouteAnimation: PageRouteAnimation.Fade);
+        Navigator.pushNamed(context, Routes.onBoardingRoute);
+        // OnBoardingScreen().launch(context,
+        //     isNewTask: true, pageRouteAnimation: PageRouteAnimation.Fade);
         // if (getBoolAsync(IN_MAINTENANCE_MODE)) {
         //   MaintenanceModeScreen().launch(context,
         //       isNewTask: true, pageRouteAnimation: PageRouteAnimation.Fade);

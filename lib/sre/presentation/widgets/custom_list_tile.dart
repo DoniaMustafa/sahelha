@@ -21,8 +21,8 @@ class CustomListTile extends StatelessWidget {
             title: Text('Country 3', style: getRegularStyle(fontSize: 18)),
             leading: CustomPngImage(
               image: AssetsManager.flag,
-              height: 36,
-              width: 63,
+              height:25,
+              width: 40,
             ),
           ),
         ),

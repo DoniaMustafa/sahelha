@@ -5,8 +5,8 @@ import 'package:sahelha_app/sre/application/utils/constants/app_constants.dart';
 import 'package:sahelha_app/sre/application/utils/resources/colors_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/styles_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/values_manager.dart';
-import 'package:sahelha_app/sre/category/teacher/presentation/pages/teacher_profile.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_button.dart';
+import 'package:sahelha_app/sre/teacher/presentation/pages/teacher_profile.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_three_images.dart';
 
 class TeacherNotesWiget extends StatefulWidget {
@@ -171,7 +171,9 @@ class _TeacherNotesWigetState extends State<TeacherNotesWiget> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 50.0),
                       child: CustomButton(text: 'Book it now', color: ColorsManager.white,
-                      textColor: ColorsManager.purpleNavy,),
+                      onPressed: (){},
+                      textColor: ColorsManager.purpleNavy,
+                      ),
                     )
                   ],
                 ),
