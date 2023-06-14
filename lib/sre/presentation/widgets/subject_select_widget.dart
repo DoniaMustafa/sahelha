@@ -113,7 +113,7 @@ class _SubjectSelectWidgetState extends State<SubjectSelectWidget> {
                       padding: const EdgeInsets.only(top: 15,bottom: 20),
                       child: Container(
                         width: AppConstants.width*AppWidth.s263,
-                        child: const StepProgressIndicator(
+                        child:  StepProgressIndicator(
                           totalSteps: 100,
                           currentStep: 32,
                           size: 8,

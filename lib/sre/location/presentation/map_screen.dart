@@ -23,49 +23,51 @@ class MapScreen extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              CustomPngImage(
-                image: AssetsManager.backgroundMap,
-                height: 200,
-                width: 200,
-                isBorderColor: true,
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              CustomPngImage(
-                image: AssetsManager.smallMap,
-                height: 318,
-                width: 389,
-                isBorderColor: true,
-              ),
-              SizedBox(
-                height: 50,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 80),
-                child: CustomButton(
-                  onPressed: ()=>Navigator.pushNamed(context, Routes.detectLocationRoute),
-                  text: 'Detect Location',
-                  textColor: ColorsManager.purpleNavy,
-                  outlined: true,
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                CustomPngImage(
+                  image: AssetsManager.backgroundMap,
+                  height: 200,
+                  width: 200,
+                  isBorderColor: true,
                 ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
+                SizedBox(
+                  height: 20,
+                ),
+                CustomPngImage(
+                  image: AssetsManager.smallMap,
+                  height: 318,
+                  width: 389,
+                  isBorderColor: true,
+                ),
+                SizedBox(
+                  height: 50,
+                ),
+                Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 80),
                   child: CustomButton(
-                    text: 'See All Locations',
-                    onPressed: () =>
-                        Navigator.pushNamed(context, Routes.allLocationsRoute),
+                    onPressed: ()=>Navigator.pushNamed(context, Routes.detectLocationRoute),
+                    text: 'Detect Location',
+                    textColor: ColorsManager.purpleNavy,
+                    outlined: true,
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 80),
+                    child: CustomButton(
+                      text: 'See All Locations',
+                      onPressed: () =>
+                          Navigator.pushNamed(context, Routes.allLocationsRoute),
 
-                  )),
+                    )),
 
-            ],
+              ],
+            ),
           ),
         ),
       ),

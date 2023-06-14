@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sahelha_app/sre/category/subject/presentation/pages/subject_select.dart';
 import 'package:sahelha_app/sre/location/presentation/all_locations_screen.dart';
 import 'package:sahelha_app/sre/application/utils/resources/routes_manager.dart';
 import 'package:sahelha_app/sre/auth/presentation/pages/signup_screen.dart';
@@ -28,7 +29,7 @@ class _MyAppState extends State<MyApp> {
         debugShowCheckedModeBanner: false,
         onGenerateRoute: RouteGenerator.getRoute,
         // initialRoute: Routes.dashboardRoute,
-        home: MapScreen()
+        home: SubjectSelectScreen()
 
     );
   }

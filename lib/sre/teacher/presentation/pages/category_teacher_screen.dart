@@ -6,6 +6,7 @@ import 'package:sahelha_app/sre/presentation/widgets/custom_icon.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_png_image.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_subject_shape.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_svg_image.dart';
+import 'package:sahelha_app/sre/teacher/presentation/pages/teacher_info.dart';
 import 'package:sahelha_app/sre/teacher/presentation/pages/teacher_profile.dart';
 
 class CategoryTeachersScreen extends StatelessWidget {
@@ -22,7 +23,7 @@ class CategoryTeachersScreen extends StatelessWidget {
 
   Widget _buildItem(context) => GestureDetector(
         onTap: () => Navigator.push(context,
-            MaterialPageRoute(builder: (context) => TeacherProfileScreen())),
+            MaterialPageRoute(builder: (context) => TeacherInfoScreen())),
         child: Stack(
           children: [
             Container(

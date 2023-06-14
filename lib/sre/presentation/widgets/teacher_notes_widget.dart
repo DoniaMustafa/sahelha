@@ -5,7 +5,7 @@ import 'package:sahelha_app/sre/application/utils/constants/app_constants.dart';
 import 'package:sahelha_app/sre/application/utils/resources/colors_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/styles_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/values_manager.dart';
-import 'package:sahelha_app/sre/category/teacher/presentation/pages/teacher_info.dart';
+import 'package:sahelha_app/sre/teacher/presentation/pages/teacher_info.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_button.dart';
 import 'package:sahelha_app/sre/teacher/presentation/pages/teacher_profile.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_three_images.dart';
@@ -115,7 +115,7 @@ class _TeacherNotesWigetState extends State<TeacherNotesWiget> {
                         SizedBox(
                           width: AppConstants.width * AppWidth.s38,
                         ),
-                        if(TeacherProfileScreen.screenIndex==1)
+                        if(TeacherInfoScreen.screenIndex==1)
                         Container(
                           width: AppConstants.width * AppWidth.s22,
                           height: AppConstants.height * AppHeight.s22,
