@@ -20,9 +20,20 @@ class AllLocationsScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
-                'See All Locations',
-                style: getBoldStyle(fontSize: 25),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  GestureDetector(
+                      onTap: ()=>Navigator.pop(context),
+                      child: Icon(Icons.arrow_back)),
+                  SizedBox(width: 20,),
+                  Expanded(
+                    child: Text(
+                      'See All Locations',
+                      style: getBoldStyle(fontSize: 25),
+                    ),
+                  ),
+                ],
               ),
               SizedBox(
                 height: AppConstants.width * AppWidth.s50,

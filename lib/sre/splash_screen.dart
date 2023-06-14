@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:sahelha_app/sre/all_locations_screen.dart';
+import 'package:sahelha_app/sre/location/presentation/all_locations_screen.dart';
 import 'package:sahelha_app/sre/application/utils/constants/app_constants.dart';
 import 'package:sahelha_app/sre/application/utils/resources/assets_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/colors_manager.dart';

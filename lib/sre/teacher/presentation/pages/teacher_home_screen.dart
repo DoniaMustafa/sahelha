@@ -4,10 +4,12 @@ import 'package:sahelha_app/sre/application/utils/resources/assets_manager.dart'
 import 'package:sahelha_app/sre/application/utils/resources/colors_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/styles_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/values_manager.dart';
+import 'package:sahelha_app/sre/home/presentation/widgets/custom_user_heder.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_circle.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_png_image.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_svg_image.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_three_images.dart';
+import 'package:sahelha_app/sre/teacher/presentation/widget/custom_comment_item.dart';
 
 class TeacherHomeScreen extends StatefulWidget {
   const TeacherHomeScreen({Key? key}) : super(key: key);
@@ -39,7 +41,7 @@ class _TeacherHomeScreenState extends State<TeacherHomeScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _buildUserInfo(),
+              CustomUserHeader(),
               SizedBox(
                 height: AppConstants.height*AppHeight.s33,
               ),
@@ -243,43 +245,7 @@ class _TeacherHomeScreenState extends State<TeacherHomeScreen> {
               ListView.separated(
                 shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
-                  itemBuilder: (context, index) {
-                return Card(
-                  elevation: 5,
-                  child: Padding(
-                    padding: EdgeInsets.all(15),
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              height: 40,
-                              width: 40,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(50),
-                                  image: DecorationImage(
-                                      image: AssetImage('assets/images_png/user.png')
-                                  )
-                              ),
-
-                            ),
-                            SizedBox(width: 5,),
-                            Text("Teacher Name" ,
-                              style: getMediumStyle(fontSize: 10,color: Colors.black),),
-                          ],
-                        ),
-                        SizedBox(height: 10,),
-                        Text(
-                          'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsumhas been the industry\'s standard dummy text ever since the 1500s, '
-                          ,
-                          style: getMediumStyle(fontSize: 12,color: Colors.black),
-                        )
-
-                      ],
-                    ),
-                  ),
-                );
-              }, separatorBuilder: (context, index) => SizedBox(height: 10), itemCount: 20)
+                  itemBuilder: (context, index) =>CustomCommentItem(), separatorBuilder: (context, index) => SizedBox(height: 10), itemCount: 20)
 
             ],
           ),
@@ -287,52 +253,6 @@ class _TeacherHomeScreenState extends State<TeacherHomeScreen> {
       ),
     );
   }
-  Widget _buildUserInfo() => Row(
-    children: [
-      CustomPngImage(isBorderColor: true,
-          image: AssetsManager.user, height: 48, width: 48, isBorder: true),
-      SizedBox(
-          width: 5
-        // AppConstants.width * AppWidth.s5,
-      ),
-      Expanded(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Teacher Name',
-              style: getSemiBoldStyle(
-                  fontSize: 15, color: ColorsManager.black),
-            ),
-            SizedBox(
-              height: AppConstants.height * AppHeight.s2,
-            ),
-            Text(
-              'location',
-              style: getRegularStyle(),
-            ),
-          ],
-        ),
-      ),
-      CustomCircle(
-        isBorder: true,
-        image: AssetsManager.search,
-        borderColor: ColorsManager.purpleNavy,
-        width: 20,
-        height: 20,
-      ),
-      SizedBox(
-        width: 12,
-      ),
-      CustomCircle(
-        isBorder: true,
-        image: AssetsManager.notify,
-        borderColor: ColorsManager.purpleNavy,
-        width: 20,
-        height: 20,
-      ),
-    ],
-  );
   Expanded _buildSessionsDetails()=> Expanded(
     flex: 1,
     child: Container(

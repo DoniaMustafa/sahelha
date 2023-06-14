@@ -8,6 +8,7 @@ import 'package:sahelha_app/sre/application/utils/resources/values_manager.dart'
 import 'package:sahelha_app/sre/messages/presentation/pages/chat_screen.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_icon.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_png_image.dart';
+import 'package:sahelha_app/sre/teacher/presentation/widget/custom_comment_item.dart';
 import 'package:sahelha_app/sre/teacher/presentation/widget/custom_teacher_header.dart';
 
 class TeacherClassScreen extends StatelessWidget {
@@ -73,7 +74,8 @@ class TeacherClassScreen extends StatelessWidget {
                                   fontSize: 15, color: ColorsManager.black)),
                           SizedBox(height: AppConstants.height * AppHeight.s10),
                           Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 20.0),
                             child: Text(
                               'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsumhas been the industry‘s standard dummy text ever since the 1500s, ',
                               style: getRegularStyle(
@@ -86,7 +88,8 @@ class TeacherClassScreen extends StatelessWidget {
                                   fontSize: 15, color: ColorsManager.black)),
                           SizedBox(height: AppConstants.height * AppHeight.s10),
                           Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 20.0),
                             child: Text(
                               'A book for the part presented in the training session',
                               style: getRegularStyle(
@@ -98,45 +101,58 @@ class TeacherClassScreen extends StatelessWidget {
                             children: [
                               Text('Comment',
                                   style: getSemiBoldStyle(
-                                      fontSize: 15, color: ColorsManager.black)),
-                              SizedBox(width: AppConstants.width * AppWidth.s10),
+                                      fontSize: 15,
+                                      color: ColorsManager.black)),
+                              SizedBox(
+                                  width: AppConstants.width * AppWidth.s10),
                               Container(
                                 width: AppConstants.width * AppWidth.s40,
                                 height: AppConstants.height * AppHeight.s20,
-
                                 child: Stack(
-                                    children: List.generate(
-                                  3,
-                                  (index) {
-                                    if(index==0){
+                                    children: List.generate(3, (index) {
+                                  if (index == 0) {
                                     return Image(
-                                    image: AssetImage(
-                                        "assets/images_png/user.png"),
-                                  );
-                                  }else if(index==1){
-                                      return Positioned(left: 10,
-                                           width: AppConstants.width * AppWidth.s20,
-                                                                              height: AppConstants.height * AppHeight.s20,
-                                          child: Image(
-                                        image: AssetImage(
-                                            "assets/images_png/user.png"),
-                                      ),);
-                                    }
-                                    else{
-                                      return Positioned(left: 20,
-                                        child: Image(
-                                          width: AppConstants.width * AppWidth.s20,
-                                          height: AppConstants.height * AppHeight.s20,
                                       image: AssetImage(
                                           "assets/images_png/user.png"),
-                                    ),);}}
-                                )),
+                                    );
+                                  } else if (index == 1) {
+                                    return Positioned(
+                                      left: 10,
+                                      width: AppConstants.width * AppWidth.s20,
+                                      height:
+                                          AppConstants.height * AppHeight.s20,
+                                      child: Image(
+                                        image: AssetImage(
+                                            "assets/images_png/user.png"),
+                                      ),
+                                    );
+                                  } else {
+                                    return Positioned(
+                                      left: 20,
+                                      child: Image(
+                                        width:
+                                            AppConstants.width * AppWidth.s20,
+                                        height:
+                                            AppConstants.height * AppHeight.s20,
+                                        image: AssetImage(
+                                            "assets/images_png/user.png"),
+                                      ),
+                                    );
+                                  }
+                                })),
                               ),
                               // SizedBox(width: AppConstants.width * AppWidth.s3),
                               Text('+60 student'),
                             ],
-                          ),  SizedBox(height: AppConstants.height*AppHeight.s15,),
-                          ListView.builder(itemBuilder: (context,i)=>buildItem(),shrinkWrap: true,itemCount: 8,)
+                          ),
+                          SizedBox(
+                            height: AppConstants.height * AppHeight.s15,
+                          ),
+                          ListView.builder(
+                            itemBuilder: (context, i) => CustomCommentItem(),
+                            shrinkWrap: true,
+                            itemCount: 8,
+                          )
                         ],
                       ),
                     ],
@@ -149,38 +165,4 @@ class TeacherClassScreen extends StatelessWidget {
       ),
     );
   }
-
-  buildItem()=>Padding(
-    padding: EdgeInsets.symmetric(vertical: 10,horizontal: 2),
-    child: Material(borderRadius: BorderRadius.all(Radius.circular(20)),
-      elevation: 5,
-      child: Container(
-        padding:  EdgeInsets.symmetric(vertical: 15,horizontal: 15),
-        decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(20)),
-          color: ColorsManager.white,
-          // boxShadow: [
-          //   BoxShadow(
-          //     color: ColorsManager., //New
-          //     blurRadius: 5.0,
-          //   )
-          // ],
-        ),
-        child: Column(
-          children: [
-            Row(children: [
-              CustomPngImage(image: AssetsManager.user,width: 20,height: 20,isBorderColor: true,),
-              SizedBox(height: AppConstants.height*AppHeight.s5,),
-              Expanded(child: Text('hassnaa adel')),
-              Text('4.5'),
-              Icon(Icons.star,color: ColorsManager.yellow,
-              size: 20,)
-            ],),
-            SizedBox(height: AppConstants.height*AppHeight.s10,),
-            Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsumhas been the industry‘s standard dummy text ever since the 1500s,',
-            style: getRegularStyle(fontSize: 11),),
-          ],
-        ),
-      ),
-    ),
-  );
 }

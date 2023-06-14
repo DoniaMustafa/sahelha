@@ -36,6 +36,13 @@ class AssetsManager {
   static const String person = "$imagesPath/person.png";
   static const String sms = "$imagesPath/sms.png";
   static const String phone = "$imagesPath/phone.png";
+  static const String backgroundMap = "$imagesPath/background_map.png";
+  static const String map = "$imagesPath/map.png";
+  static const String smallMap = "$imagesPath/small_map.png";
+
+
+
+
 ///////////////////////// svg ////////////////
   static const String logo = "$svgesPath/logo.svg";
   static const String search = "$svgesPath/search.svg";
