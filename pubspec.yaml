@@ -41,6 +41,9 @@ dependencies:
   #tab bar
   toggle_switch: ^2.1.0
 
+  #step_progress_indicator
+  step_progress_indicator: ^1.0.2
+
   #horizontal calender
   horizontal_calendar: ^1.1.2
 

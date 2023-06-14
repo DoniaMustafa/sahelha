@@ -718,4 +718,6 @@ class AppHeight {
   static const double s397 = 0.4907292954264524;
   static const double s398 = 0.4919653893695921;
   static const double s399 = 0.4932014833127318;
+  static const double s499 = 0.6432014833127318;
+  static const double s500 = 0.6932014833127318;
 }

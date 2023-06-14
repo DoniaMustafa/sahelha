@@ -16,6 +16,7 @@ class CategoryTeachersScreen extends StatelessWidget {
     return ListView.builder(
         shrinkWrap: true,
         itemCount: 10,
+
         itemBuilder: (context, index) => _buildItem(context));
   }
 
