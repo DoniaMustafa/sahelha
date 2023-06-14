@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sahelha_app/sre/application/utils/resources/assets_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/colors_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/styles_manager.dart';
-import 'package:sahelha_app/sre/category/teacher/presentation/pages/teacher_profile.dart';
+import 'package:sahelha_app/sre/category/teacher/presentation/pages/teacher_info.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_png_image.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_subject_shape.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_svg_image.dart';
@@ -20,7 +20,7 @@ class TeachersScreen extends StatelessWidget {
   }
 
   Widget _buildItem(context) => GestureDetector(
-    onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>TeacherProfileScreen())),
+    onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>TeacherInfoScreen())),
     child: Stack(
           children: [
             Container(

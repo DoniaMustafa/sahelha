@@ -41,7 +41,14 @@ class AssetsManager {
   static const String search = "$svgesPath/search.svg";
   static const String rating = "$svgesPath/rating.svg";
   static const String edit = "$svgesPath/edit.svg";
+  static const String profile_edit = "$svgesPath/profile_edit.svg";
   static const String notify = "$svgesPath/notify.svg";
+  static const String bell = "$svgesPath/bell.svg";
+  static const String settings = "$svgesPath/settings.svg";
+  static const String language = "$svgesPath/language.svg";
+  static const String theme = "$svgesPath/theme.svg";
+  static const String info = "$svgesPath/info.svg";
+  static const String out = "$svgesPath/out.svg";
 
   ////////////////////////////
 

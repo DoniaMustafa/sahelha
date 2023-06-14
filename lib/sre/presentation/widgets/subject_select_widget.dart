@@ -1,24 +1,20 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:nb_utils/nb_utils.dart';
 import 'package:sahelha_app/sre/application/utils/constants/app_constants.dart';
 import 'package:sahelha_app/sre/application/utils/resources/colors_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/styles_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/values_manager.dart';
-import 'package:sahelha_app/sre/category/teacher/presentation/pages/teacher_info.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_button.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_three_images.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
-class TeacherNotesWiget extends StatefulWidget {
+class SubjectSelectWidget extends StatefulWidget {
+  const SubjectSelectWidget({Key? key}) : super(key: key);
+
   @override
-  State<TeacherNotesWiget> createState() => _TeacherNotesWigetState();
-
-
+  State<SubjectSelectWidget> createState() => _SubjectSelectWidgetState();
 }
 
-class _TeacherNotesWigetState extends State<TeacherNotesWiget> {
-  double height=120;
+class _SubjectSelectWidgetState extends State<SubjectSelectWidget> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -26,49 +22,8 @@ class _TeacherNotesWigetState extends State<TeacherNotesWiget> {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: EdgeInsets.only(
-            left: AppConstants.width * AppWidth.s15,
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                width: AppConstants.width * AppWidth.s22,
-                height: AppConstants.height * AppHeight.s22,
-                decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [ColorsManager.accentYellow, ColorsManager.yellow2],
-                  ),
-                  borderRadius: BorderRadius.circular(50),
-                ),
-                child: Center(
-                  child: Container(
-                    width: AppConstants.width * AppWidth.s13,
-                    height: AppConstants.height * AppHeight.s13,
-                    decoration: BoxDecoration(
-                      color: ColorsManager.accentYellow,
-                      borderRadius: BorderRadius.circular(90),
-                    ),
-                  ),
-                ),
-              ),
-                SizedBox(width: AppConstants.width*AppWidth.s7,),
-              Text("11.0",
-                  style:
-                      getBoldStyle(color: ColorsManager.black, fontSize: 15)),
-            ],
-          ),
-        ),
-        SizedBox(
-          height: AppConstants.height * AppHeight.s15,
-        ),
         Container(
-          margin: EdgeInsets.symmetric(horizontal: AppConstants.width * AppWidth.s39),
+          margin: EdgeInsets.symmetric(horizontal: AppConstants.width * AppWidth.s21),
           padding: EdgeInsetsDirectional.all(  AppConstants.width*AppWidth.s12),
           // width: AppConstants.width * AppWidth.s296,
           // height: AppConstants.height * AppHeight.s185,
@@ -102,11 +57,11 @@ class _TeacherNotesWigetState extends State<TeacherNotesWiget> {
                       children: [
                         Expanded(flex: 1,
                           child: Text(
-                            'Math for first year of secondary school',
+                            'first year of secondary school',
                             overflow: TextOverflow.ellipsis,
                             maxLines: 2,
                             style: getMediumStyle(
-                              height: 1.2,
+                                height: 1.2,
                                 fontSize: 14, color: ColorsManager.white),
                           ),
                         ),
@@ -114,19 +69,23 @@ class _TeacherNotesWigetState extends State<TeacherNotesWiget> {
                         SizedBox(
                           width: AppConstants.width * AppWidth.s38,
                         ),
-                        if(TeacherInfoScreen.screenIndex==1)
-                        Container(
-                          width: AppConstants.width * AppWidth.s22,
-                          height: AppConstants.height * AppHeight.s22,
-                          decoration: BoxDecoration(
-                            color: ColorsManager.white,
-                            borderRadius: BorderRadius.circular(50),
-                          ),
-                          child: Center(
-                              child: Icon(Icons.favorite,
-                                  color: Colors.red, size: 17)),
+                        Text(
+                          '30 Stars',
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 2,
+                          style: getMediumStyle(
+                              height: 1.2,
+                              fontSize: 14, color: ColorsManager.yellow),
                         ),
                       ],
+                    ),
+                    SizedBox(
+                      height: AppConstants.height * AppHeight.s6,
+                    ),
+                    Text(
+                      "Teacher Name",
+                      style: getMediumStyle(
+                          fontSize: 14, color: ColorsManager.yellow),
                     ),
                     SizedBox(
                       height: AppConstants.height * AppHeight.s6,
@@ -144,14 +103,10 @@ class _TeacherNotesWigetState extends State<TeacherNotesWiget> {
                       children: [
 
                         Text(
-                          "+20",
+                          "3 set left",
                           style: getRegularStyle(
-                              fontSize: 12, color: ColorsManager.white),
+                              fontSize: 13, color: ColorsManager.white),
                         ),
-                        SizedBox(
-                          width: AppConstants.width * AppWidth.s5,
-                        ),
-                        customThreeImages(ColorsManager.purpleNavy)
                       ],
                     ),
                     Padding(
@@ -166,11 +121,11 @@ class _TeacherNotesWigetState extends State<TeacherNotesWiget> {
                           selectedColor: Colors.white,
                           unselectedColor: Colors.white,
                           roundedEdges: Radius.circular(10),
-                            selectedGradientColor: LinearGradient(
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                              colors: [Colors.white, Colors.white],
-                            ),
+                          selectedGradientColor: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [Colors.white, Colors.white],
+                          ),
                           unselectedGradientColor: LinearGradient(
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
@@ -180,9 +135,9 @@ class _TeacherNotesWigetState extends State<TeacherNotesWiget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 50.0),
+                      padding:  EdgeInsets.only(left: AppConstants.width*AppWidth.s140),
                       child: CustomButton(text: 'Book it now', color: ColorsManager.white,
-                      textColor: ColorsManager.purpleNavy,),
+                        textColor: ColorsManager.purpleNavy,outlined: false,),
                     )
                   ],
                 ),
