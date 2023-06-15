@@ -136,7 +136,7 @@ class _SubjectSelectWidgetState extends State<SubjectSelectWidget> {
                     ),
                     Padding(
                       padding:  EdgeInsets.only(left: AppConstants.width*AppWidth.s140),
-                      child: CustomButton(text: 'Book it now', color: ColorsManager.white,
+                      child: CustomButton(onPressed: (){},text: 'Book it now', color: ColorsManager.white,
                         textColor: ColorsManager.purpleNavy,outlined: false,),
                     )
                   ],

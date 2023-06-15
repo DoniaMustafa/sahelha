@@ -18,6 +18,7 @@ class ColorsManager {
   //
   static const Color yellow = Color(0xffF2C225);
   static const Color yellow2 = Color(0xFFECB3);
+  static const Color greyWithOpacity = Color(0xFFDDDDDD);
   //
   static const Color accentYellow = Color(0xffFFB41E);
    static const Color lightGray = Color(0xffB8B8D1);

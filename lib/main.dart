@@ -8,6 +8,7 @@ import 'package:sahelha_app/sre/dashboard/dashboard_screen.dart';
 import 'package:sahelha_app/sre/home/presentation/screens/home_screen.dart';
 import 'package:sahelha_app/sre/location/presentation/map_screen.dart';
 import 'package:sahelha_app/sre/splash_screen.dart';
+import 'package:sahelha_app/sre/student/student_rate.dart';
 import 'package:sahelha_app/sre/teacher/presentation/pages/teacher_class_screen.dart';
 import 'package:sahelha_app/sre/teacher/presentation/pages/teacher_home_screen.dart';
 
@@ -29,7 +30,7 @@ class _MyAppState extends State<MyApp> {
         debugShowCheckedModeBanner: false,
         onGenerateRoute: RouteGenerator.getRoute,
         // initialRoute: Routes.dashboardRoute,
-        home: SubjectSelectScreen()
+        home: StudentRateScreen()
 
     );
   }
