@@ -57,6 +57,8 @@ class AssetsManager {
   static const String theme = "$svgesPath/theme.svg";
   static const String fillInfo = "$svgesPath/fill_info.svg";
   static const String out = "$svgesPath/out.svg";
+  static const String rating_draw = "$svgesPath/rating_draw.svg";
+
   static const String eye = "$svgesPath/eye.svg";
   static const String cardIcon = "$svgesPath/card_icon.svg";
   static const String fillCardIcon = "$svgesPath/fill_card_icon.svg";

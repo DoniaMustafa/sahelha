@@ -44,6 +44,9 @@ dependencies:
   #step_progress_indicator
   step_progress_indicator: ^1.0.2
 
+  #smooth_star_rating
+  smooth_star_rating_null_safety: ^1.0.4+2
+
   #horizontal calender
   horizontal_calendar: ^1.1.2
 

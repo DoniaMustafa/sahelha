@@ -58,12 +58,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
           // flat: true,
           // itemColor: ColorsManager.white ,
           // controller: _controller,
-          textItems: [
-            Text('home'),
-            Text('home'),
-            Text('home'),
-            Text('home')
-          ] ,
+          // textItems: [
+          //   Text('home'),
+          //   Text('home'),
+          //   Text('home'),
+          //   Text('home')
+          // ] ,
           items: [
             CustomSVGImage(image: AssetsManager.home, width: 30,height: 30,),
             // Column(
