@@ -10,8 +10,15 @@ import 'package:sahelha_app/sre/application/utils/resources/values_manager.dart'
 import 'package:sahelha_app/sre/presentation/widgets/custom_button.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_svg_image.dart';
 
-class ChooseScreen extends StatelessWidget {
-  const ChooseScreen({Key? key}) : super(key: key);
+class ChooseScreen extends StatefulWidget {
+   ChooseScreen({Key? key}) : super(key: key);
+
+  @override
+  State<ChooseScreen> createState() => _ChooseScreenState();
+}
+
+class _ChooseScreenState extends State<ChooseScreen> {
+  int index =0;
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +70,12 @@ class ChooseScreen extends StatelessWidget {
                       child: CustomButton(
                     text: 'student',
                     isIcon: true,
-                    onPressed: () => Navigator.pushNamed(context, Routes.signUpRoute),
+                    onPressed: () {
+                      setState(() {
+                        index=0;
+                      });
+                      Navigator.pushNamed(context, Routes.signUpRoute,arguments: {});
+                    },
                   )),
                   Padding(
                     padding: EdgeInsets.symmetric(
@@ -77,8 +89,12 @@ class ChooseScreen extends StatelessWidget {
                   Expanded(
                       child: CustomButton(
                     text: 'Teacher',
-                    onPressed: () =>
-                        Navigator.pushNamed(context, Routes.signUpRoute),
+                    onPressed: () {
+                      setState(() {
+                        index=1;
+                      });
+                      Navigator.pushNamed(context, Routes.signUpRoute);
+                    },
                     outlined: true,
                     textColor: ColorsManager.purpleNavy,
                   )),

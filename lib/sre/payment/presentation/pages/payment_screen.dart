@@ -3,6 +3,7 @@ import 'package:nb_utils/nb_utils.dart';
 import 'package:sahelha_app/sre/application/utils/constants/app_constants.dart';
 import 'package:sahelha_app/sre/application/utils/resources/assets_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/colors_manager.dart';
+import 'package:sahelha_app/sre/application/utils/resources/routes_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/styles_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/values_manager.dart';
 import 'package:sahelha_app/sre/methods.dart';
@@ -161,7 +162,7 @@ class PaymentScreen extends StatelessWidget {
                   ],
                 ),
               SizedBox(
-                height:  index == 0?60:40,
+                height: index == 0 ? 60 : 40,
               ),
               Align(
                 alignment: AlignmentDirectional.centerEnd,
@@ -171,16 +172,69 @@ class PaymentScreen extends StatelessWidget {
                     isBold: true,
                     iconColor: ColorsManager.white.withOpacity(0.6),
                     onPressed: () {
-                      // showModalBottomSheet(
-                      //     constraints: BoxConstraints(maxHeight: 330),
-                      // context: context,
-                      // shape: RoundedRectangleBorder(
-                      // borderRadius:
-                      // BorderRadius.all(Radius.circular(10))),
-                      // builder: (context) =>);
-
-                      },
-                    text: index == 0?'Confirm':'Continue',
+                      showModalBottomSheet(
+                        isScrollControlled: true,
+                          constraints:
+                              BoxConstraints(minWidth: AppConstants.width,maxHeight: AppConstants.height*0.8),
+                          context: context,
+                          shape: RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(30))),
+                          builder: (context) => Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      height: 8,
+                                      width: 100,
+                                      decoration: BoxDecoration(
+                                          color: ColorsManager.lightGray,
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(10))),
+                                    ),
+                                    SizedBox(
+                                      height: 30,
+                                    ),
+                                    Text(
+                                      'Verify the validity of the card\nthe card',
+                                      textAlign: TextAlign.center,
+                                      style: getSemiBoldStyle(
+                                          fontSize: 15,
+                                          color: ColorsManager.purpleNavy),
+                                    ),
+                                    SizedBox(
+                                      height: 50,
+                                    ),
+                                    Text(
+                                      'Please wait',
+                                      textAlign: TextAlign.center,
+                                      style: getSemiBoldStyle(
+                                          fontSize: 15,
+                                          color: ColorsManager.lightGray),
+                                    ),
+                                    SizedBox(
+                                      height: 25,
+                                    ),
+                                    Container(
+                                      width: 200,
+                                      height: 200,
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(100),),border: Border.all(color: ColorsManager.green,width:8)),
+                                      child: Text('5...',style: getSemiBoldStyle(fontSize: 66,color: ColorsManager.green),),
+                                    ),
+                                    SizedBox(
+                                      height: 45,
+                                    ),
+                                    Text('We are contacting your bank to ensure that\n the information is correct',
+                                    textAlign: TextAlign.center,style: getRegularStyle(color: ColorsManager.lightGray),)
+                                  ],
+                                ),
+                              ));
+                    },
+                    text: index == 0 ? 'Confirm' : 'Continue',
                     isIcon: true,
                   ),
                 ),
