@@ -31,7 +31,7 @@ class ColorsManager {
   // static const Color chineseSilver = Color(0xffC8C8C8);
   // static const Color graniteGray2 = Color(0xff665968);
   static const Color brightGray = Color(0xffeeeeee);
-  // static const Color brightGray2 = Color(0xffE9E9E9);
+  // static const Color brightGray2 = Color(0xffECECEC);
   // static const Color davysGrey = Color(0xff50555C);
   // static const Color gainsboro2 = Color(0xffDFDFDF);
   // static const Color gainsboro3 = Color(0xffD0D0D);

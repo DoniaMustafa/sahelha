@@ -1,6 +1,3 @@
-import 'dart:ui';
-
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:rolling_bottom_bar/rolling_bottom_bar.dart';
@@ -13,7 +10,6 @@ import 'package:sahelha_app/sre/booking/presentation/pages/booking_screen.dart';
 import 'package:sahelha_app/sre/category/category_screen.dart';
 import 'package:sahelha_app/sre/home/presentation/screens/home_screen.dart';
 import 'package:sahelha_app/sre/messages/presentation/pages/messages_screen.dart';
-import 'package:sahelha_app/sre/presentation/widgets/custom_svg_image.dart';
 
 class DashboardScreen extends StatefulWidget {
   final bool? redirectToBooking;
@@ -52,42 +48,19 @@ class _DashboardScreenState extends State<DashboardScreen> {
           ],
         ),
         extendBody: true,
-        bottomNavigationBar: CurvedNavigationBar(
-          color: ColorsManager.white,
-          backgroundColor:ColorsManager.green ,
-          // flat: true,
-          // itemColor: ColorsManager.white ,
-          // controller: _controller,
-          // textItems: [
-          //   Text('home'),
-          //   Text('home'),
-          //   Text('home'),
-          //   Text('home')
-          // ] ,
-          items: [
-            CustomSVGImage(image: AssetsManager.home, width: 30,height: 30,),
-            // Column(
-            //   children: [
-                CustomSVGImage(image: AssetsManager.messages, width: 30,height: 30, ),
-            //     // Text('home')
-            //   ],
-            // ),
-            // Column(
-            //   children: [
-                CustomSVGImage(image: AssetsManager.booking,  width: 30,height: 30,),
-            //   ],
-            // ),
-            // Column(
-            //   children: [
-                CustomSVGImage(image: AssetsManager.category,  width: 30,height: 30,),
-            //   ],
-            // ),
-            // Icon(Icons.category, ),
-            // Icon(Icons.category, ),  Icon(Icons.category, color: Colors.red,),            Icon(Icons.category, ),
+        bottomNavigationBar: RollingBottomBar(
+          color: ColorsManager.purpleNavy,
+          flat: true,activeItemColor:  ColorsManager.white,
+          itemColor: ColorsManager.white ,
+          controller: _controller,
 
+          items: [
+            RollingBottomBarItem(AssetsManager.home, label: 'home',),
+            RollingBottomBarItem(AssetsManager.messages, label: 'messages'),
+            RollingBottomBarItem(AssetsManager.booking, label: 'booking'),
+            RollingBottomBarItem(AssetsManager.category, label: 'category'),
           ],
-          // activeItemColor: ColorsManager.white,
-          // enableIconRotation: true,
+          enableIconRotation: true,
           onTap: (index) {
             _controller.animateToPage(
               index,

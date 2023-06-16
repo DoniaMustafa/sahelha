@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:sahelha_app/sre/application/utils/constants/app_constants.dart';
 import 'package:sahelha_app/sre/application/utils/resources/assets_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/colors_manager.dart';
+import 'package:sahelha_app/sre/application/utils/resources/routes_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/styles_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/values_manager.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_icon.dart';
@@ -53,18 +55,24 @@ class CustomTeacherHeader extends StatelessWidget {
                               fontSize: 14, color: ColorsManager.white),
                         ),
                       ),
-                      Text(
-                        '4.5',
-                        style: getRegularStyle(
-                            fontSize: 11, color: ColorsManager.white),
-                        textAlign: TextAlign.center,
-                      ),
-                      SizedBox(width: 2),
-                      CustomIcon(
-                        icon: Icons.star,
-                        iconColor: ColorsManager.yellow,
-                        size: 15,
-                      )
+                     GestureDetector(
+                       onTap: ()=>Navigator.pushNamed(context,  Routes.studentRateRoute),
+                           // push(context:context,route: Routes.detectLocationRoute),
+                       child: Row(children: [
+                         Text(
+                           '4.5',
+                           style: getRegularStyle(
+                               fontSize: 11, color: ColorsManager.white),
+                           textAlign: TextAlign.center,
+                         ),
+                         SizedBox(width: 2),
+                         CustomIcon(
+                           icon: Icons.star,
+                           iconColor: ColorsManager.yellow,
+                           size: 15,
+                         )
+                       ],),
+                     )
                     ],
                   ),
                   SizedBox(height:5),

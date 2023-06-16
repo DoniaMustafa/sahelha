@@ -1,35 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:sahelha_app/sre/application/utils/constants/app_constants.dart';
 import 'package:sahelha_app/sre/application/utils/resources/assets_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/colors_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/styles_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/values_manager.dart';
+import 'package:sahelha_app/sre/methods.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_button.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_png_image.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_textform.dart';
 
 class PaymentScreen extends StatelessWidget {
-  const PaymentScreen({Key? key}) : super(key: key);
-
+  PaymentScreen({Key? key}) : super(key: key);
+  static const String whileScreen = '';
+  int index = 0;
   @override
   Widget build(BuildContext context) {
-    AppConstants.height = MediaQuery.of(context).size.height; /* app height*/
-    AppConstants.width = MediaQuery.of(context).size.width; /*appf width*/
-    AppConstants.margin = AppWidth.s23 * AppConstants.width; /*app margin*/
-    AppConstants.appBarHeight =
-        AppHeight.s90 * AppConstants.height; /*app margin*/
-    AppConstants.appBodyHeight = AppConstants.height -
-        AppHeight.s90 * AppConstants.height; /*app margin*/
+    Map<String, dynamic>? arguments = AppGenericMethods.getArguments(context);
+    // debugPrint(arguments.fromJsonToString);
+    if (arguments != null) {
+      index = arguments[whileScreen];
+    }
+    print(index);
 
     return Scaffold(
       appBar: AppBar(
-          elevation: 0,
-          title: Text(
-            'Add New Card',
-            style: getSemiBoldStyle(color: ColorsManager.black),
+        title: Text(
+          'Add New Card',
+          style: getSemiBoldStyle(color: ColorsManager.black, fontSize: 14),
+        ),
+        leading: GestureDetector(
+          onTap: () => pop(),
+          child: Icon(
+            Icons.arrow_back_ios_new,
+            color: ColorsManager.black,
+            size: 20,
           ),
-          centerTitle: true,
-          backgroundColor: ColorsManager.white),
+        ),
+        centerTitle: true,
+      ),
       body: SingleChildScrollView(
         child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 20),
@@ -77,7 +86,7 @@ class PaymentScreen extends StatelessWidget {
                 suffixIcon: AssetsManager.fillCardIcon,
               ),
               SizedBox(
-                height:30,
+                height: 30,
               ),
               Row(
                 mainAxisSize: MainAxisSize.min,
@@ -130,36 +139,52 @@ class PaymentScreen extends StatelessWidget {
                   ),
                 ],
               ),
+              if (index == 1)
+                SizedBox(
+                  height: 40,
+                ),
+              if (index == 1)
+                Row(
+                  children: [
+                    Radio(
+                        value: "radio value",
+                        groupValue: "group value",
+                        onChanged: (value) {
+                          print(value); //selected value
+                        }),
+                    Text(
+                      'save card',
+                      style: getSemiBoldStyle(
+                        fontSize: 13,
+                      ),
+                    )
+                  ],
+                ),
               SizedBox(
-                height: 40,
+                height:  index == 0?60:40,
               ),
-              Row(
-                children: [
-                  Radio(
-                      value: "radio value",
-                      groupValue: "group value",
-                      onChanged: (value) {
-                        print(value); //selected value
-                      }),
-                  Text('save card',style: getSemiBoldStyle(
-                    fontSize: 13,
-                  ),)
-                ],
-              ),
-              SizedBox(
-                height: 40,
-              ),
-          Padding(
-            padding:  EdgeInsets.symmetric(horizontal: 100.0),
-            child: CustomButton(
-              isBold: true,
-              iconColor: ColorsManager.white.withOpacity(0.6),
-              onPressed: ()  {
-              },
-              text: 'Get Start' ,
-              isIcon:true,
-            ),
-          )
+              Align(
+                alignment: AlignmentDirectional.centerEnd,
+                child: Padding(
+                  padding: EdgeInsetsDirectional.only(start: 200.0),
+                  child: CustomButton(
+                    isBold: true,
+                    iconColor: ColorsManager.white.withOpacity(0.6),
+                    onPressed: () {
+                      // showModalBottomSheet(
+                      //     constraints: BoxConstraints(maxHeight: 330),
+                      // context: context,
+                      // shape: RoundedRectangleBorder(
+                      // borderRadius:
+                      // BorderRadius.all(Radius.circular(10))),
+                      // builder: (context) =>);
+
+                      },
+                    text: index == 0?'Confirm':'Continue',
+                    isIcon: true,
+                  ),
+                ),
+              )
             ],
           ),
         ),

@@ -23,8 +23,8 @@ class _SubjectSelectWidgetState extends State<SubjectSelectWidget> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          margin: EdgeInsets.symmetric(horizontal: AppConstants.width * AppWidth.s21),
-          padding: EdgeInsetsDirectional.all(  AppConstants.width*AppWidth.s12),
+          margin: EdgeInsets.symmetric(horizontal: AppConstants.width * AppWidth.s21,),
+          padding: EdgeInsetsDirectional.all(  AppConstants.width*AppWidth.s15),
           // width: AppConstants.width * AppWidth.s296,
           // height: AppConstants.height * AppHeight.s185,
           decoration: BoxDecoration(
@@ -37,7 +37,7 @@ class _SubjectSelectWidgetState extends State<SubjectSelectWidget> {
               // SizedBox(width: AppConstants.width*AppWidth.s6,),
               Container(
                 width: AppConstants.width * AppWidth.s5,
-                height: AppConstants.height * AppHeight.s160,
+                height: AppConstants.height * AppHeight.s200,
                 decoration: BoxDecoration(
                   color: ColorsManager.white,
                   borderRadius: BorderRadius.circular(AppConstants.width * AppWidth.s6),
@@ -55,27 +55,27 @@ class _SubjectSelectWidgetState extends State<SubjectSelectWidget> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Expanded(flex: 1,
+                        Expanded(
                           child: Text(
                             'first year of secondary school',
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 2,
+                            // overflow: TextOverflow.ellipsis,
+                            maxLines: 1,
                             style: getMediumStyle(
-                                height: 1.2,
+                                // height: 1.2,
                                 fontSize: 14, color: ColorsManager.white),
                           ),
                         ),
                         // if(StudentScreen.screenIndex==1)
-                        SizedBox(
-                          width: AppConstants.width * AppWidth.s38,
-                        ),
+                        // SizedBox(
+                        //   width: AppConstants.width * AppWidth.s38,
+                        // ),
                         Text(
                           '30 Stars',
                           overflow: TextOverflow.ellipsis,
-                          maxLines: 2,
+                          // maxLines: 2,
                           style: getMediumStyle(
-                              height: 1.2,
-                              fontSize: 14, color: ColorsManager.yellow),
+                              // height: 1.2,
+                              fontSize: 13, color: ColorsManager.yellow),
                         ),
                       ],
                     ),

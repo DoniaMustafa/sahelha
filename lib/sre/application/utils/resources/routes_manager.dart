@@ -7,7 +7,12 @@ import 'package:sahelha_app/sre/location/presentation/all_locations_screen.dart'
 import 'package:sahelha_app/sre/location/presentation/detect_location_screen.dart';
 import 'package:sahelha_app/sre/location/presentation/map_screen.dart';
 import 'package:sahelha_app/sre/onboarding/onboarding.dart';
+import 'package:sahelha_app/sre/payment/presentation/pages/payment_screen.dart';
 import 'package:sahelha_app/sre/splash_screen.dart';
+import 'package:sahelha_app/sre/student/student_rate.dart';
+import 'package:sahelha_app/sre/subject/presentation/pages/subject_select.dart';
+import 'package:sahelha_app/sre/teacher/presentation/pages/teacher_class_screen.dart';
+import 'package:sahelha_app/sre/teacher/presentation/pages/teacher_info.dart';
 
 class Routes {
   Routes._internal();
@@ -23,12 +28,15 @@ class Routes {
   static const String verificationRoute = "/verification";
   static const String categoryRoute = "/category";
   static const String allLocationsRoute = "/All Locations";
-  static const String updateFoodRoute = "/update food";
-  static const String aboutUsRoute = "/about us";
+  static const String subjectSelectRoute = "/subject Select";
+
+
+
+  static const String teacherInfoRoute = "/teacherInfo";
+  static const String teacherClassRoute = "/teacher Class";
   static const String seeAllRoute = "/see all";
-  static const String clientProfileRoute = "/client profile";
-  static const String ordersHistoryRoute = "/orders history";
-  static const String favouriteRoute = "/saved";
+  static const String paymentRoute = "/Payment";
+  static const String studentRateRoute = "/Student Rate";
   static const String accountInfoRoute = "/account info";
   static const String addressDetailRoute = "/address details";
   static const String checkoutRoute = "/checkout";
@@ -73,7 +81,6 @@ class RouteGenerator {
         return pageFadeTransition(widget: SignUpScreen(), routeSettings: routeSettings);
       case Routes.verificationRoute:
         return pageFadeTransition(widget: VerificationScreen(), routeSettings: routeSettings);
-
       case Routes.dashboardRoute:
         return pageFadeTransition(widget: DashboardScreen(), routeSettings: routeSettings);
       case Routes.chooseRoute:
@@ -82,25 +89,27 @@ class RouteGenerator {
         return pageFadeTransition(widget: MapScreen(), routeSettings: routeSettings);
       case Routes.detectLocationRoute:
         return pageFadeTransition(widget: DetectLocationScreen(), routeSettings: routeSettings);
-    //   case Routes.categoryRoute:
-    //     return pageFadeTransition(widget: CategoryScreen(), routeSettings: routeSettings);
       case Routes.allLocationsRoute:
         return pageFadeTransition(widget: AllLocationsScreen(), routeSettings: routeSettings);
-    //
-    //   case Routes.aboutUsRoute:
-    //     return pageFadeTransition(widget: AboutUsScreen(), routeSettings: routeSettings);
+
+         case Routes.subjectSelectRoute:
+            return pageFadeTransition(widget: SubjectSelectScreen(), routeSettings: routeSettings);
+          case Routes.teacherInfoRoute:
+            return pageFadeTransition(widget: TeacherInfoScreen(), routeSettings: routeSettings);
+
+    //   case Routes.categoryRoute:
+    //     return pageFadeTransition(widget: CategoryScreen(), routeSettings: routeSettings);
+
+      case Routes.teacherClassRoute:
+        return pageFadeTransition(widget: TeacherClassScreen(), routeSettings: routeSettings);
     //   case Routes.seeAllRoute:
     //     return pageFadeTransition(widget: SeeAllScreen(), routeSettings: routeSettings);
-    //   case Routes.ordersHistoryRoute:
-    //     return pageFadeTransition(widget: OrdersHistoryScreen(), routeSettings: routeSettings);
-    //   case Routes.accountInfoRoute:
-    //     return pageFadeTransition(widget: AccountInfoScreen(), routeSettings: routeSettings);
-    //   case Routes.favouriteRoute:
-    //     return pageFadeTransition(widget: FavouriteScreen(), routeSettings: routeSettings);
+      case Routes.paymentRoute:
+        return pageFadeTransition(widget: PaymentScreen(), routeSettings: routeSettings);
     //   case Routes.addressDetailRoute:
     //     return pageFadeTransition(widget: AddressDetailsScreen(), routeSettings: routeSettings);
-    //   case Routes.checkoutRoute:
-    //     return pageFadeTransition(widget: CheckOutScreen(), routeSettings: routeSettings);
+      case Routes.studentRateRoute:
+        return pageFadeTransition(widget: StudentRateScreen(), routeSettings: routeSettings);
     //   case Routes.doneRoute:
     //     return pageFadeTransition(widget: DoneScreen(), routeSettings: routeSettings);
     //   case Routes.cookProfileRoute:

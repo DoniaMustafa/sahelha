@@ -160,7 +160,7 @@ class VerificationScreen extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 100),
-                  child: CustomButton(text:'Submit',onPressed: ()=>Navigator.pushNamed(context, Routes.dashboardRoute),isIcon: true,)
+                  child: CustomButton(text:'Submit',onPressed: ()=>Navigator.pushNamed(context, Routes.mapRoute),isIcon: true,)
 
                 ),
               ],

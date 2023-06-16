@@ -44,7 +44,7 @@ class DetectLocationScreen extends StatelessWidget {
                   height: 30,
                 ),
                 CustomPngImage(image: AssetsManager.map,width: 400,
-                    height: 550,),SizedBox(
+                    height: 550,isBorderColor: true),SizedBox(
                   height: 30,
                 ),
                 Padding(
@@ -53,7 +53,7 @@ class DetectLocationScreen extends StatelessWidget {
                     text: 'Ok',
                     onPressed: () => Navigator.pushNamed(
                         context,
-                        Routes.verificationRoute),
+                        Routes.dashboardRoute),
                   ),
                 ),
               ],

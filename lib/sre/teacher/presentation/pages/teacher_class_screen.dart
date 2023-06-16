@@ -3,9 +3,12 @@ import 'package:nb_utils/nb_utils.dart';
 import 'package:sahelha_app/sre/application/utils/constants/app_constants.dart';
 import 'package:sahelha_app/sre/application/utils/resources/assets_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/colors_manager.dart';
+import 'package:sahelha_app/sre/application/utils/resources/routes_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/styles_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/values_manager.dart';
 import 'package:sahelha_app/sre/messages/presentation/pages/chat_screen.dart';
+import 'package:sahelha_app/sre/payment/presentation/pages/payment_screen.dart';
+import 'package:sahelha_app/sre/presentation/widgets/custom_button.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_icon.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_png_image.dart';
 import 'package:sahelha_app/sre/teacher/presentation/widget/custom_comment_item.dart';
@@ -16,13 +19,6 @@ class TeacherClassScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppConstants.height = MediaQuery.of(context).size.height; /* app height*/
-    AppConstants.width = MediaQuery.of(context).size.width; /*appf width*/
-    AppConstants.margin = AppWidth.s23 * AppConstants.width; /*app margin*/
-    AppConstants.appBarHeight =
-        AppHeight.s90 * AppConstants.height; /*app margin*/
-    AppConstants.appBodyHeight = AppConstants.height -
-        AppHeight.s90 * AppConstants.height; /*app margin*/
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -35,9 +31,6 @@ class TeacherClassScreen extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: Container(
-                      // margin: EdgeInsets.symmetric(
-                      //   vertical: 30,
-                      // ),
                       padding:
                           EdgeInsets.symmetric(vertical: 30, horizontal: 20),
                       color: ColorsManager.purpleNavy,
@@ -159,7 +152,86 @@ class TeacherClassScreen extends StatelessWidget {
                   ),
                 ),
               ),
-            )
+            ),
+            Positioned(
+                bottom: 20,
+                width: AppWidth.s300 * AppConstants.width,
+                child: CustomButton(
+                  text: 'book this session',
+                  onPressed: () {
+                    showModalBottomSheet(
+                        constraints: BoxConstraints(maxHeight: 330),
+                        context: context,
+                        shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10))),
+                        builder: (context) => Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    height: 8,
+                                    width: 100,
+                                    decoration: BoxDecoration(
+                                        color: ColorsManager.lightGray,
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(10))),
+                                  ),
+                                  SizedBox(
+                                    height: 40,
+                                  ),
+                                  CustomPngImage(
+                                    image: AssetsManager.towCredit,
+                                    isBorderColor: true,
+                                    width: 110,
+                                    height: 110,
+                                  ),
+                                  SizedBox(
+                                    height: 40,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.only(
+                                        start: 50.0),
+                                    child: Row(
+                                        children: List.generate(
+                                      2,
+                                      (index) => Expanded(
+                                        child: GestureDetector(
+                                          onTap: () => Navigator.pushNamed(
+                                              context, Routes.paymentRoute,
+                                              arguments: {
+                                                PaymentScreen.whileScreen:
+                                                    index,
+                                              }),
+                                          child: Row(
+                                            children: [
+                                              Radio(
+                                                  value: "radio value",
+                                                  groupValue: "group value",
+                                                  onChanged: (value) {
+
+                                                    print(value); //selected value
+                                                  }),
+                                              Text(
+                                                index == 0
+                                                    ? 'Your credit card'
+                                                    : 'Add New Card',
+                                                style: getSemiBoldStyle(
+                                                  fontSize: 13,
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    )),
+                                  ),
+                                ],
+                              ),
+                            ));
+                  },
+                ))
           ],
         ),
       ),

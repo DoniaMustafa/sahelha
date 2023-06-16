@@ -26,7 +26,7 @@ class AssetsManager {
   static const String star = "$imagesPath/star.png";
   static const String home = "$imagesPath/home.png";
   static const String teacherImg = "$imagesPath/teacher_img.png";
-  static const String send = "$imagesPath/send.png";
+  // static const String send = "$imagesPath/send.png";
   static const String verifyBackground = "$imagesPath/verify_background.png";
   static const String lock = "$imagesPath/lock.png";
   static const String flag = "$imagesPath/flag.png";
@@ -40,9 +40,8 @@ class AssetsManager {
   static const String map = "$imagesPath/map.png";
   static const String smallMap = "$imagesPath/small_map.png";
   static const String creditCard = "$imagesPath/creditcard.png";
-
-
-
+  static const String ratingDraw = "$imagesPath/rating_draw.png";
+  static const String towCredit = "$imagesPath/tow_credit.png";
 
 ///////////////////////// svg ////////////////
   static const String logo = "$svgesPath/logo.svg";
@@ -57,7 +56,7 @@ class AssetsManager {
   static const String theme = "$svgesPath/theme.svg";
   static const String fillInfo = "$svgesPath/fill_info.svg";
   static const String out = "$svgesPath/out.svg";
-  static const String rating_draw = "$svgesPath/rating_draw.svg";
+  static const String send = "$svgesPath/send.svg";
 
   static const String eye = "$svgesPath/eye.svg";
   static const String cardIcon = "$svgesPath/card_icon.svg";

@@ -24,11 +24,13 @@ class CustomTextField extends StatelessWidget {
   String? suffixIcon;
   double prefixWidth;
   double prefixHeight;
+  bool isChat;
   VoidCallback? suffixOnTap;
   final AlignmentDirectional alignment;
   Function(bool)? onFocusChange;
   CustomTextField(
       {super.key,
+this.isChat=false,
       this.hintText,
       this.suffixOnTap,
       this.prefixHeight = 0.0,
@@ -53,7 +55,7 @@ class CustomTextField extends StatelessWidget {
     return Column(//set widgets vertically
         children: [
       Material(
-        elevation: 5,
+        elevation: isPrefix!?5:0,
         borderRadius: BorderRadius.circular(AppConstants.circleRadius),
         child: Container(
           padding: EdgeInsetsDirectional.symmetric(
@@ -72,7 +74,7 @@ class CustomTextField extends StatelessWidget {
                 color: ColorsManager.lightGray,
                 width: 0.2,
                 style: BorderStyle.solid),
-            borderRadius: BorderRadius.circular(AppConstants.circleRadius),
+            borderRadius: BorderRadius.circular(isChat?AppConstants.circleRadius+15:AppConstants.circleRadius),
           ),
           child: Focus(
             onFocusChange: onFocusChange,

@@ -35,7 +35,6 @@ dependencies:
   nb_utils: ^5.0.8
 
   cupertino_icons: ^1.0.2
-  rolling_bottom_bar: ^0.2.2
   percent_indicator: ^4.2.3
 
   #tab bar
@@ -60,6 +59,7 @@ dependencies:
   lottie:
   pin_code_fields: ^7.4.0
   curved_navigation_bar: ^1.0.3
+  rolling_bottom_bar: ^0.2.2
 
 
 dev_dependencies:

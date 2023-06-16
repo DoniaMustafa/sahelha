@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sahelha_app/sre/application/utils/resources/assets_manager.dart';
 import 'package:sahelha_app/sre/application/utils/resources/colors_manager.dart';
+import 'package:sahelha_app/sre/application/utils/resources/routes_manager.dart';
 import 'package:sahelha_app/sre/presentation/widgets/custom_subject_shape.dart';
 
 class SubjectScreen extends StatelessWidget {
@@ -23,9 +24,13 @@ class SubjectScreen extends StatelessWidget {
           ),
           delegate: SliverChildBuilderDelegate(
             (context, index) {
-              return CustomSubjectShape(
-                image: AssetsManager.subject,
-                text: 'physics',
+              return GestureDetector(
+                onTap: ()=>Navigator.pushNamed(context, Routes.subjectSelectRoute),
+
+                child: CustomSubjectShape(
+                  image: AssetsManager.subject,
+                  text: 'physics',
+                ),
               );
             },
             childCount: 27,
