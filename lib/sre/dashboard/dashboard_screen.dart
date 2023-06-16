@@ -52,7 +52,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           ],
         ),
         extendBody: true,
-        bottomNavigationBar:  CurvedNavigationBar(
+        bottomNavigationBar: CurvedNavigationBar(
           color: ColorsManager.white,
           backgroundColor:ColorsManager.green ,
           // flat: true,

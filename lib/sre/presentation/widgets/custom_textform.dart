@@ -104,7 +104,7 @@ class CustomTextField extends StatelessWidget {
                         child: CustomSVGImage(
                           image: suffixIcon!,
                           width: AppConstants.width * AppWidth.s20,
-                          height: AppConstants.height * AppHeight.s15,
+                          height: AppConstants.height * AppHeight.s20,
                         ),
                       )
                     : null,

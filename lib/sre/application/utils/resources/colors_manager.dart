@@ -9,7 +9,7 @@ class ColorsManager {
   static const Color green = Color(0xff4BBC71);
   static const Color accentGreen= Color(0xff6BFFB5);
   static const Color white = Colors.white;
-  // static const Color primary = Colors.white;
+  static const Color snowWhite = Color(0xffF8F8F8);
   static const Color platinum = Color(0xffE7E7E7);
 
   // static  const Color maximumPurple =  Color(0xff5B5F97);
